@@ -5,6 +5,13 @@ import App from './App'
 import router from './router'
 import store from './store/store'
 import sync from 'vuex-router-sync'
+import Buefy from 'buefy'
+import mystyle from './mystyle.sass'
+
+
+
+
+Vue.use(Buefy)
 
 Vue.config.productionTip = false
 

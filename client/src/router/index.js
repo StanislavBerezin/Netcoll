@@ -3,8 +3,10 @@ import Router from 'vue-router'
 
 
 //for lazy loads
-const Component1 = resolve => require(['@/components/Component1'], resolve)
+const Intro = resolve => require(['@/components/Intro'], resolve)
 const Check = resolve => require(['@/components/Check'], resolve)
+
+
 
 Vue.use(Router)
 
@@ -14,7 +16,7 @@ export default new Router({
     {
       path: '/',
       name: 'Component1',
-      component:  Component1
+      component:  Intro
     },
     {
       path: '/home',
