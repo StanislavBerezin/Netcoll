@@ -3,8 +3,9 @@
     <div class="main_image">
       <Nav></Nav>
       <div class="text">
-        <h1 class="subtitle is-1">Empowering knowledge<br>
-          <hr class="line">To assist and enhance learnng experience</h1>
+        <h1 class="subtitle is-3">Learn more. Achieve more.<br></h1>
+        <hr class="line">
+        <h3 class="subtitle is-5" style="color:#fff">Student platfrom to exchange knowledge and understanding of unit materials</h3>
       </div>
 
 
@@ -77,19 +78,21 @@
 
         <div class="section">
 
-          <h2 class="subtitle is-1">How does it work?</h2>
+          <h2 class="title is-1 fix">How does it work?</h2>
           <section>
             <b-tabs position="is-centered" class="block">
-              <b-tab-item label="I am a student wanting to learn" @click="selectedComponent='Learn'">
+              <b-tab-item label="I am a student wanting to learn">
 
                 <article class="message is-info">
                   <div class="message-header">
                     <p>Step 1</p>
                   </div>
                   <div class="message-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
-                    quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
-                    diam, et dictum
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
+                      quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
+                      diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
+                      Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque.
+                      Donec dui urna, vehicula et sem eget, facilisis sodales sem.</p>
                   </div>
                 </article>
 
@@ -98,9 +101,11 @@
                     <p>Step 2</p>
                   </div>
                   <div class="message-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
-                    quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
-                    diam, et dictum
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
+                      quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
+                      diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
+                      Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque.
+                      Donec dui urna, vehicula et sem eget, facilisis sodales sem.</p>
                   </div>
                 </article>
 
@@ -109,9 +114,11 @@
                     <p>Step 3</p>
                   </div>
                   <div class="message-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
-                    quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
-                    diam, et dictum
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
+                      quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
+                      diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
+                      Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque.
+                      Donec dui urna, vehicula et sem eget, facilisis sodales sem.</p>
                   </div>
                 </article>
 
@@ -120,9 +127,11 @@
                     <p>Step 4</p>
                   </div>
                   <div class="message-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
-                    quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
-                    diam, et dictum
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
+                      quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
+                      diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
+                      Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque.
+                      Donec dui urna, vehicula et sem eget, facilisis sodales sem.</p>
                   </div>
                 </article>
 
@@ -130,74 +139,106 @@
                 <p class="subtitle is-4">
                   Now it's time to get started
                 </p>
-                <a class="button is-info">Log-in</a>
-                <a class="button is-info">Register</a>
+
+                <button class="button is-info" style="margin-right:15px;" @click="isLogin = true">
+                    Login
+                  </button>
+
+                <b-modal :active.sync="isLogin" has-modal-card>
+                  <Login v-bind="formProps"></Login>
+                </b-modal>
+
+                <button class="button is-info" @click="isSignup = true">
+                    Sign up
+                  </button>
+
+                <b-modal :active.sync="isSignup" has-modal-card>
+                  <Register v-bind="formProps"></Register>
+                </b-modal>
+
+
+
               </b-tab-item>
 
 
               <b-tab-item label="I am a student wanting to help" @click="selectedComponent='Teach'">
 
 
-                <article class="message is-success">
+                <article class="message is-primary">
                   <div class="message-header">
                     <p>Step 1</p>
 
                   </div>
                   <div class="message-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
-                    quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
-                    diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
-                    Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque.
-                    Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
+                      quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
+                      diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
+                      Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque.
+                      Donec dui urna, vehicula et sem eget, facilisis sodales sem.</p>
                   </div>
                 </article>
 
-                <article class="message is-success">
+                <article class="message is-primary">
                   <div class="message-header">
                     <p>Step 2</p>
 
                   </div>
                   <div class="message-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
-                    quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
-                    diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
-                    Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque.
-                    Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
+                      quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
+                      diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
+                      Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque.
+                      Donec dui urna, vehicula et sem eget, facilisis sodales sem.</p>
                   </div>
                 </article>
 
-                <article class="message is-success">
+                <article class="message is-primary">
                   <div class="message-header">
                     <p>Step 3</p>
 
                   </div>
                   <div class="message-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
-                    quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
-                    diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
-                    Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque.
-                    Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
+                      quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
+                      diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
+                      Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque.
+                      Donec dui urna, vehicula et sem eget, facilisis sodales sem.</p>
                   </div>
                 </article>
 
-                <article class="message is-success">
+                <article class="message is-primary">
                   <div class="message-header">
                     <p>Step 4</p>
 
                   </div>
                   <div class="message-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
-                    quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
-                    diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
-                    Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque.
-                    Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
+                      quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
+                      diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
+                      Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque.
+                      Donec dui urna, vehicula et sem eget, facilisis sodales sem.</p>
                   </div>
                 </article>
                 <p class="subtitle is-4">
                   Now it's time to get started
                 </p>
-                <a class="button is-success">Log-in</a>
-                <a class="button is-success">Register</a>
+
+
+                <button class="button is-primary" style="margin-right:15px;" @click="isLogin = true">
+                    Login
+                  </button>
+
+                <b-modal :active.sync="isLogin" has-modal-card>
+                  <Login v-bind="formProps"></Login>
+                </b-modal>
+
+                <button class="button is-primary" @click="isSignup = true">
+                    Sign up
+                  </button>
+
+                <b-modal :active.sync="isSignup" has-modal-card>
+                  <Register v-bind="formProps"></Register>
+                </b-modal>
 
               </b-tab-item>
             </b-tabs>
@@ -209,33 +250,72 @@
       </div>
     </div>
 
-    <section class="hero is-medium is-primary is-bold">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="subtitle is-1">
-        If you have any questions please contact us
-      </h1>
-      <a class="button is-link">Contact us</a>
+
+    <div class="contact">
+
+      <div class="text_contact">
+        <h1 class="title is-3">
+          If you have any questions please contact us
+        </h1>
+
+        <button class="button is-info is-inverted is-large" style="margin-top:15px;" @click="isContact = true">
+                    Contact us
+                  </button>
+
+
+
+      </div>
+      <b-modal :active.sync="isContact" has-modal-card>
+        <Contact v-bind="formProps"></Contact>
+      </b-modal>
     </div>
-  </div>
-</section>
+
+    <Footer></Footer>
+
   </div>
 </template>
 
 <script>
   import Nav from './small/Nav'
   import Footer from './small/Footer'
+  import logo from '../assets/logo.svg'
+  import Login from './small/Login.vue'
+  import Register from './small/Register.vue'
+  import Contact from './small/Contact.vue'
+  import Auth from '../connection/Auth.js'
 
   export default {
     data() {
       return {
-        selectedComponent: "Teach"
+        logo,
+        isLogin: false,
+        isSignup: false,
+        isContact: false,
+        //change props to fit each individually
+        formProps: {
+          email: 'evan@you.com',
+          password: 'testing'
+        }
+
       }
     },
     components: {
       Nav,
-      Footer
+      Footer,
+      Login,
+      Register,
+      Contact
 
+    },
+    methods: {
+     async signUp() {
+        await Auth.registerUser({
+
+          email: "here",
+          name: "another"
+
+        })
+      }
     },
     watch: {
 
@@ -244,19 +324,44 @@
 
 </script>
 <style lang="css" scoped>
-.container h1, h2{
+  .contact {
+    background: #4776E6;
+    /* fallback for old browsers */
+    height: 35vh;
+    margin-top: -80px;
+    background: -webkit-linear-gradient(to left, #209cee, #00d1b2);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #209cee, #00d1b2);
     text-align: center;
-    font-weight: 100;
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
 
-}
+  .contact h1 {
+    color: #fff;
+  }
+
+  .text_contact {
+
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   .each:nth-child(odd) {
     background-color: rgba(236, 240, 241, 0.7);
   }
 
-  .section h2,
-  p {
-    font-weight: 100;
+  .h1_title {
+    font-weight: 100
   }
+
+  * {
+    font-weight: 100 !important;
+  }
+
+
 
   .section {
     margin-bottom: 35px;
@@ -280,7 +385,17 @@
   h2::after {
     display: block;
     height: 2px;
-    background-color: #3498db;
+    background-color: #00dbde;
+    content: " ";
+    width: 15rem;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+
+  .fix::after {
+    display: block;
+    height: 2px;
+    background-color: #209cee;
     content: " ";
     width: 15rem;
     margin: 0 auto;
@@ -289,46 +404,57 @@
 
 
   .test {
-    color: rgba(52, 152, 219, 1.0);
+    color: #00dbde;
     margin-top: -10px;
     margin-bottom: 10px;
   }
   /*good here */
 
   .text {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    text-align: center;
+    position: relative;
+    float: left;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    word-spacing: 5px;
   }
 
 
   .line {
-    width: 40%;
+    width: 30%;
+    margin: 0 auto;
     height: 2px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     background-color: rgba(236, 240, 241, 1.0);
   }
 
   .text h1 {
     color: rgba(236, 240, 241, 1.0);
-    grid-column: 2/10;
-    position: relative;
-    margin-top: 20%;
-    font-weight: 100;
-    font-size: 2.5rem;
+
+
+    margin-top: 15%;
+    font-weight: 100 !important;
+    font-size: 160%;
   }
 
   .main_image {
-    background: #00F260;
+    background: #fc00ff;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(left, #0575E6, #00F260);
-    background: -moz-linear-gradient(left, #0575E6, #00F260);
-    background: -o-linear-gradient(left, #0575E6, #00F260);
-    background: linear-gradient(to right, #0575E6, #00F260);
+    background: -webkit-linear-gradient(to left, #00dbde, #fc00ff);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #00dbde, #fc00ff);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     /* Chrome 10-25, Safari 5.1-6 */
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: cover;
     background-position: center;
     height: 100vh;
+
     background-attachment: fixed;
   }
+
+  @media screen and (max-width: 768px) {}
 
 </style>

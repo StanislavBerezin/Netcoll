@@ -1,5 +1,5 @@
 module.exports = {
-  port: process.env.PORT || 8080,
+  port: process.env.PORT || 8888,
   db:{
     port: 'mongodb://url_to_connect',
     password: '123'

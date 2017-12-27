@@ -17,4 +17,9 @@ module.exports = (app) => {
         IsAuth.googleAuth,
         GetController.getController
     )
+
+    app.post('/signup',
+        AuthenticationController.registerUser
+    
+    )
 }

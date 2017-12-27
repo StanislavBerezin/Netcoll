@@ -1,6 +1,6 @@
 //importing models and other things that are needed
 //when working with routes (responses and requests)
-const model = require('../models/Model')
+const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 const config = require('../config/config')
 
@@ -26,6 +26,9 @@ module.exports = {
         })
     },
 
+    registerUser(req, res){
+        res.send(req.body)
+    },
 
     
 

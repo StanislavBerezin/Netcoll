@@ -5,20 +5,26 @@
         <div class="navbar-brand">
             <a class="navbar-item">
                 <img :src="Logo" alt="Netcoll">
+                <img src="https://vectr.com/tmp/e6LG2rLnfi/bybsV647Z.svg?width=100&height=100&select=bybsV647Zpage0" style="height:50px;"alt="">
             </a>
         </div>
 
         <div class="navbar-menu ">
             <div class="navbar-end">
                 <b-dropdown position="is-bottom-left">
+
                     <a class="navbar-item" slot="trigger">
-                        <span>Login</span>
-                        <b-icon icon="menu-down"></b-icon>
+                         <p>Login</p>
+                       
                     </a>
 
                     <b-dropdown-item custom paddingless>
-                        <form action="">
-                            <div class="modal-card" style="width:300px;">
+                        <form action="" >
+                            <div class="modal-card" style="max-width:300px;">
+                                 <header class="modal-card-head">
+      <p class="modal-card-title">Login</p>
+
+    </header>
                                 <section class="modal-card-body">
                                     <b-field label="Email">
                                         <b-input
@@ -47,6 +53,21 @@
                         </form>
                     </b-dropdown-item>
                 </b-dropdown>
+
+
+
+
+
+               
+                    <a class="navbar-item" slot="trigger"  @click="isSignup = true">
+                         <p>Sign up</p>
+                       
+                    </a>
+
+                  <b-modal :active.sync="isSignup" has-modal-card>
+                      <Register v-bind="formProps"></Register>
+                  </b-modal>
+
             </div>
         </div>
     </nav>
@@ -54,12 +75,23 @@
     </div>
 </template>
 <script>
-    import Logo from '@/assets/Logo.png'
+    import Logo from '@/assets/logo.svg'
+          import Register from './Register.vue'
 export default {
     data(){
         return{
-            Logo
+            Logo,
+            isSignup: false,
+            formProps: {
+                    email: 'evan@you.com',
+                    password: 'testing'
+                },
+                real: true
+            
         }
+    },
+    components:{
+        Register
     }
   
 }
@@ -71,5 +103,6 @@ export default {
     padding-right: 60px;
 
 }
+
 
 </style>
