@@ -26,7 +26,6 @@
 
         <footer class="modal-card-foot">
           <button class="button is-primary">Login</button>
-          <button class="button is-primary">Register</button>
         </footer>
       </div>
 

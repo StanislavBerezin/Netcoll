@@ -18,7 +18,7 @@ app.use(cors())
 
 require('./routes')(app)
 require('passport-jwt')
-
+require('./db_connect')
 
 
 

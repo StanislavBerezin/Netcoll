@@ -3,11 +3,11 @@ const mongoose = require('mongoose')
 const userSchema = mongoose.Schema({
 
     _id: mongoose.Schema.Types.ObjectId,
-    name: String,
+    name: String
 
 
 
-
+    /*
     tokens:[{
         access:{
             type: String,
@@ -17,13 +17,13 @@ const userSchema = mongoose.Schema({
             type: String,
             required: true
         }
-    }]
+    }]*/
 })
 
 //getting the methods
-require('./userController/UserController')(userSchema)
+//require('./userController/UserController')(userSchema)
 
 
-module.exports = mongoose.model('UserObject', userSchema)
+module.exports = mongoose.model('User', userSchema)
 
 //need bcrypt, mongoose,

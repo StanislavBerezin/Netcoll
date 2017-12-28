@@ -83,9 +83,13 @@
 
         
         await Auth.registerUser(this.user).then(() => {
+          
+
           console.log('sent')
-          console.log(this.user)
+
         })
+            const loadingComponent = this.$loading.open()
+            setTimeout(()=> loadingComponent.close(), 2 * 1000 )
       }
     }
 

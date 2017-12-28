@@ -4,6 +4,8 @@ const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 const config = require('../config/config')
 
+const mongoose = require('mongoose')
+
 //jwt tokens, can be a week, or 24 hours, or 3 days
 function jwtOneWeek(user) {
     const oneWeek = 60 * 60 * 24 * 7
@@ -27,7 +29,17 @@ module.exports = {
     },
 
     registerUser(req, res){
-        res.send(req.body)
+        const user = new User({
+            _id: new mongoose.Types.ObjectId(),
+            name: req.body.username
+        })
+        user.save().then(result =>{
+            console.log(result)
+            console.log('saved?')
+            res.send(result)
+        }).catch((err)=> console.log('something happened'))
+        
+        
     },
 
     
