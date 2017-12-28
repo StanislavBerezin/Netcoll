@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const config = require('../../config/config')
+const jwt = require('jsonwebtoken')
 
 module.exports = function(userSchema){
 
@@ -7,7 +8,7 @@ module.exports = function(userSchema){
 userSchema.methods.generateAuthToken = function(){
     var user = this;
     
-    var access = 'auth';
+    var access = config.auth.jwtSecret;
     
     var token = jwt.sign(
         {_id: user._id.toHexString(), access}, 

@@ -3,11 +3,25 @@ const mongoose = require('mongoose')
 const userSchema = mongoose.Schema({
 
     _id: mongoose.Schema.Types.ObjectId,
-    name: String
+    username: {
+        type: String,
+        required: true,
+        trim: true,
+        minlength: 3,
 
-
-
-    /*
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    university:{
+        type: String,
+        required: true
+    },
     tokens:[{
         access:{
             type: String,
@@ -17,11 +31,15 @@ const userSchema = mongoose.Schema({
             type: String,
             required: true
         }
-    }]*/
+    }]
+
+   
+
+
 })
 
 //getting the methods
-//require('./userController/UserController')(userSchema)
+require('./userController/UserController')(userSchema)
 
 
 module.exports = mongoose.model('User', userSchema)

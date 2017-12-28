@@ -1,5 +1,5 @@
 const passport = require('passport-jwt')
-
+const {User} = require('../models/User')
 //user model is needed!
 
 const JwtStrategy = require('passport-jwt').Strategy
@@ -16,29 +16,24 @@ let options = {
 
 
 
-passport.use( new JwtStrategy(options , function (jwtPayload, done)
+passport.use(new JwtStrategy(options, 
+        async function (jwtPayload, done){
 
-{
-        try{
-            //find user based on id, jwtPayload.id to id in DB
-             
-            
-            if(!user){
+            try {
+                //find user based on id, jwtPayload.id to id in DB
+                const user = await user.findByToken()
+
+                if (!user) {
+                    return done(new Error(), false)
+                }
+                return done(null, user)
+            } catch (error) {
                 return done(new Error(), false)
             }
-            return done(null, user)
-        }
-        catch(error) {
-            return done(new Error(), false)
-        }
-    })
+        })
 
 )
 
 
 //because we are simply making a passport object which will be used in IsAuth
 module.exports = null
-
-
-
-

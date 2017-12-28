@@ -17,12 +17,12 @@
             </b-input>
           </b-field>
           <b-field label="Your username" :type="form.username.icon" :message="form.username.message">
-            <b-input  v-model="user.username" placeholder="Your username"  maxlength="10"  required>
+            <b-input v-model="user.username" placeholder="Your username" maxlength="10" required>
             </b-input>
           </b-field>
 
           <b-field label="Your universirty">
-            <b-input type="email" v-model="user.uni" placeholder="Your email" required>
+            <b-input type="email" v-model="user.university" placeholder="Your email" required>
             </b-input>
           </b-field>
 
@@ -58,22 +58,22 @@
     data() {
       return {
 
-        form:{
-            email:{
-                icon: "is-success",
-                message: ""
-            },
-            username:{
-                icon: "is-success",
-                message: "This username is available"
-            }
-            
+        form: {
+          email: {
+            icon: "is-success",
+            message: ""
+          },
+          username: {
+            icon: "is-success",
+            message: "This username is available"
+          }
+
         },
-        user:{
-            email: "",
-            username: "",
-            password: "",
-            uni: ""
+        user: {
+          email: "",
+          username: "",
+          password: "",
+          university: ""
         }
 
       }
@@ -81,15 +81,14 @@
     methods: {
       async signUp() {
 
-        
-        await Auth.registerUser(this.user).then(() => {
-          
+        await Auth.registerUser(this.user).then((result) => {
 
-          console.log('sent')
+          console.log(result)
 
         })
-            const loadingComponent = this.$loading.open()
-            setTimeout(()=> loadingComponent.close(), 2 * 1000 )
+        
+        const loadingComponent = this.$loading.open()
+        setTimeout(() => loadingComponent.close(), 2 * 1000)
       }
     }
 
