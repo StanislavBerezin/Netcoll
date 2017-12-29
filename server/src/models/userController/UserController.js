@@ -15,7 +15,6 @@ userSchema.methods.generateAuthToken = function(){
             config.auth.jwtFindBy).toString();
 
     
-    console.log(user)
     user.tokens.pop()
     user.tokens.push({
         access,
@@ -34,12 +33,13 @@ userSchema.methods.comparePassword = function(password){
     return bcrypt.compareSync(password, user.password)
   
 },
-userSchema.methods.removeTokens = function(){
+
+userSchema.methods.removeToken = function(token){
     let user = this;
 
     return user.update({
-        $pullAll:{
-            tokens
+        $pull:{
+            tokens:{token}
         }
     })
 }
