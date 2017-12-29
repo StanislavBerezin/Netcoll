@@ -31,11 +31,8 @@ const userSchema = mongoose.Schema({
             type: String,
             required: true
         }
-    }]
-
-   
-
-
+    }],
+    
 })
 
 //getting the methods

@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 
 module.exports = function(userSchema){
 
-//making a token for the user
+//making a token for the user/ if one exist need to remove it and assign a new one
 userSchema.methods.generateAuthToken = function(){
     var user = this;
     
@@ -14,19 +14,36 @@ userSchema.methods.generateAuthToken = function(){
         {_id: user._id.toHexString(), access}, 
             config.auth.jwtFindBy).toString();
 
+    
+    console.log(user)
+    user.tokens.pop()
     user.tokens.push({
         access,
         token
     });
 
-
+   
     return user.save().then(()=>{
         return token;
     });
 },
 
+//comparing passwords
+userSchema.methods.comparePassword = function(password){
+    let user = this;
+    return bcrypt.compareSync(password, user.password)
+  
+},
+userSchema.methods.removeTokens = function(){
+    let user = this;
 
-//find by token
+    return user.update({
+        $pullAll:{
+            tokens
+        }
+    })
+}
+//find by token used for authentication
 userSchema.statics.findByToken = function (token){
     var User = this;
     var decoded;
@@ -51,7 +68,7 @@ userSchema.statics.findByToken = function (token){
 userSchema.pre('save', function (next) {
     var user = this;
 
-    if (user.isModified('password')){
+    if (user.isModified('password') || user.isNew){
 
         bcrypt.genSalt(10, (err, salt)=>{
 

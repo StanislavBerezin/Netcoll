@@ -13,7 +13,7 @@ module.exports = (app) => {
     
     )
     
-    app.get('/login',
+    app.post('/login',
         AuthenticationController.loginUser
     )
 }

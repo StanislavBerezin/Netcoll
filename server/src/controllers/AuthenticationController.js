@@ -5,7 +5,7 @@ const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 const config = require('../config/config')
 const mongoose = require('mongoose')
-
+var _ = require('lodash');
 //jwt tokens, can be a week, or 24 hours, or 3 days
 
 function generateToken(req) {
@@ -15,6 +15,12 @@ function generateToken(req) {
         exp: Math.floor(new Date().getTime() / 1000) + 7 * 24 * 60 * 60 // Note: in seconds!
     }, config.auth.jwtSecret); // secret is defined in the environment variable JWT_SECRET
     return token;
+}
+
+function beforeSend(userObject, ...parameteres ){
+     const userToObject = userObject.toObject()
+     return _.pick(userToObject, [...parameteres])
+
 }
 
 
@@ -52,13 +58,14 @@ module.exports = {
                 return user.generateAuthToken()
 
             })
-            .then((token) => {
-                const userJson = user.toJSON()
+            .then(() => 
+            {
                 res.send({
-                    user: userJson,
-                    additional: generateToken(req)
+                    user: beforeSend(user, 'username', 'university', 'tokens'),
+                    extraToken: generateToken(req)
                 })
             })
+
             .catch((err) => {
 
                 res.status(400).send(err)
@@ -69,7 +76,43 @@ module.exports = {
     },
 
 
-    loginUser(req, res) {
+    async loginUser(req, res) {
+
+        try{
+            const {email, password} = req.body
+            const user = await User.findOne({
+                email: req.body.email
+            })
+            
+            if(!user){
+                return res.status(403).send({
+                    error: "Incorrect details email"
+                })
+            }
+
+            const isPassValid = await user.comparePassword(password)
+
+
+            if(!isPassValid){
+                return res.status(403).send({
+                    error: "Incorrect details pass"
+                })
+            }
+           
+          
+            await user.generateAuthToken()
+            
+                
+            res.send({
+                    user: beforeSend(user, 'username', 'university', 'tokens'),
+                    extraToken: generateToken(req)
+            })
+        
+        }catch(err){
+            res.status(403).send({
+                error: "Inavlid login details ss"
+            })
+        }
 
 
     }

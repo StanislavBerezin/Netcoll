@@ -4,12 +4,13 @@ const Joi = require('joi')
 module.exports = {
 
 
-    
+    //basicaly what this is for is before we even begin registration it will check the body recieived from client
+    //if its all good, then yea we can go an register
     //controller with next, which requires next() to be present before going to the next controller
     policyOne(req, res, next) {
 
 
-        //can add more
+        //can add more //check joy
         const schema = {
             username: Joi.string().alphanum().min(3).max(30).required(),
             email: Joi.string.email(),
