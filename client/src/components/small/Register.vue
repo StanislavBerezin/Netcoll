@@ -22,7 +22,7 @@
           </b-field>
 
           <b-field label="Your universirty">
-            <b-input type="email" v-model="user.university" placeholder="Your email" required>
+            <b-input v-model="user.university" placeholder="Your university" required>
             </b-input>
           </b-field>
 
@@ -80,12 +80,28 @@
     },
     methods: {
       async signUp() {
+        try{
 
-        await Auth.registerUser(this.user).then((result) => {
+          const userData = await Auth.registerUser(this.user)
+          
+              this.$store.dispatch('setToken', userData.data.user.tokens[0].token)
+              this.$store.dispatch('setExtra', userData.data.extraToken)
+              this.$store.dispatch('setUni', userData.data.user.university)
+              this.$store.dispatch('setUsername', userData.data.user.username)
+              this.$store.dispatch('setLog', true)
 
-          console.log(result)
+          console.log(userData.data.user.tokens[0].token)
+          console.log(userData.data.extraToken)
+          console.log(userData.data.user.username)
+          console.log(userData.data.user.university)
 
-        })
+        }catch(err){
+          console.log(err)
+        }
+        
+
+
+
         
         const loadingComponent = this.$loading.open()
         setTimeout(() => loadingComponent.close(), 2 * 1000)

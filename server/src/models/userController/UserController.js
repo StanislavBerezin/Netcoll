@@ -2,6 +2,9 @@ const bcrypt = require('bcrypt');
 const config = require('../../config/config')
 const jwt = require('jsonwebtoken')
 
+
+
+
 module.exports = function(userSchema){
 
 //making a token for the user/ if one exist need to remove it and assign a new one

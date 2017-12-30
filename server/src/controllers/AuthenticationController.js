@@ -17,9 +17,9 @@ function generateToken(req) {
     return token;
 }
 
-function beforeSend(userObject, ...parameteres ){
-     const userToObject = userObject.toObject()
-     return _.pick(userToObject, [...parameteres])
+function sendData(userObject, ...parameteres) {
+    const userToObject = userObject.toObject()
+    return _.pick(userToObject, [...parameteres])
 
 }
 
@@ -44,47 +44,73 @@ module.exports = {
 
     async registerUser(req, res) {
 
-        const user = await new User({
-            _id: new mongoose.Types.ObjectId(),
-            username: req.body.username,
-            password: req.body.password,
-            email: req.body.email,
-            university: req.body.university
-        })
+        try {
+            const {email, username } = req.body
 
-        user.save()
-            .then(() => {
-
-                return user.generateAuthToken()
-
+            const checkUser = await User.findOne({
+                email,
+                username
             })
-            .then(() => 
-            {
-                res.send({
-                    user: beforeSend(user, 'username', 'university', 'tokens'),
-                    extraToken: generateToken(req)
+
+            if (checkUser) {
+                return res.status(400).send({
+                    error: "This user is already registered"
                 })
+            }
+
+
+            const user = await new User({
+                _id: new mongoose.Types.ObjectId(),
+                username: req.body.username,
+                password: req.body.password,
+                email: req.body.email,
+                university: req.body.university
             })
 
-            .catch((err) => {
+            user.save()
+                .then(() => {
 
-                res.status(400).send(err)
+                    return user.generateAuthToken(req)
 
+                })
+                .then(() => {
+
+                    
+                    res.send({
+                        user: sendData(user, 'username', 'university', 'tokens'),
+                        extraToken: generateToken(req)
+                    })
+                })
+
+                .catch((err) => {
+
+                    res.status(400).send({
+                        error: "Somethng went wrong with registration"
+                    })
+
+                })
+
+        } catch (err) {
+
+            res.status(500).send({
+                error: "Something happened on global level in saving"
             })
 
+        }
 
     },
 
 
     async loginUser(req, res) {
 
-        try{
-            const {email, password} = req.body
+        try {
+            const {email,password} = req.body
+            
             const user = await User.findOne({
                 email: req.body.email
             })
-            
-            if(!user){
+
+            if (!user) {
                 return res.status(403).send({
                     error: "Incorrect details email"
                 })
@@ -93,22 +119,22 @@ module.exports = {
             const isPassValid = await user.comparePassword(password)
 
 
-            if(!isPassValid){
+            if (!isPassValid) {
                 return res.status(403).send({
                     error: "Incorrect details pass"
                 })
             }
-           
-          
+
+
             await user.generateAuthToken()
-            
-                
+
+
             res.send({
-                    user: beforeSend(user, 'username', 'university', 'tokens'),
-                    extraToken: generateToken(req)
+                user: sendData(user, 'username', 'university', 'tokens'),
+                extraToken: generateToken(req)
             })
-        
-        }catch(err){
+
+        } catch (err) {
             res.status(403).send({
                 error: "Inavlid login details ss"
             })

@@ -4,6 +4,9 @@ export default{
 
     registerUser(credentials){
         return Api().post('/signup', credentials)
+    },
+    loginUser(credentials){
+        return Api().post('/login', credentials)
     }
 }
 
