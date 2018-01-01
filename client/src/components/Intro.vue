@@ -359,7 +359,7 @@
   }
 
   * {
-    font-weight: 100 !important;
+    font-weight: 200;
   }
 
 
@@ -386,7 +386,7 @@
   h2::after {
     display: block;
     height: 2px;
-    background-color: #00dbde;
+    background-color: rgba(52, 152, 219, 1.0);;
     content: " ";
     width: 15rem;
     margin: 0 auto;
@@ -396,7 +396,7 @@
   .fix::after {
     display: block;
     height: 2px;
-    background-color: #209cee;
+    background-color: rgba(52, 152, 219, 1.0);;
     content: " ";
     width: 15rem;
     margin: 0 auto;
@@ -405,7 +405,7 @@
 
 
   .test {
-    color: #00dbde;
+    color: rgba(52, 152, 219, 1.0);;
     margin-top: -10px;
     margin-bottom: 10px;
   }
@@ -443,9 +443,9 @@
   .main_image {
     background: #fc00ff;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #00dbde, #fc00ff);
+    background: -webkit-linear-gradient(to left, rgba(52, 152, 219, 1.0), #b700b9);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #00dbde, #fc00ff);
+    background: linear-gradient(to left, rgba(52, 152, 219, 1.0), #b700b9);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     /* Chrome 10-25, Safari 5.1-6 */
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */

@@ -5,6 +5,7 @@ import Router from 'vue-router'
 //for lazy loads
 const Intro = resolve => require(['@/components/Intro'], resolve)
 const Check = resolve => require(['@/components/Check'], resolve)
+const Dashboard = resolve => require(['@/components/dash/Dashboard'], resolve)
 
 
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/home',
       name: 'Check',
       component: Check
+    },
+    {
+      path: '/dashboard',
+      name: "Dashboard",
+      component: Dashboard
     }
   ] 
 })
