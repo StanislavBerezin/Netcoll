@@ -2,7 +2,19 @@
 <div class="grid">
     <Nav class="navigation"></Nav>
     <Sidemenu class="row sidemenu"></Sidemenu>
-    <Main class="maincontent"></Main>
+    <section class="maincontent">
+        <b-tabs >
+
+            <b-tab-item label="Search">
+                   <MainSearch></MainSearch>
+            </b-tab-item>
+
+            <b-tab-item label="View purchased">
+               
+            </b-tab-item>
+        </b-tabs>
+    </section>
+ 
     <Footer class="footer"></Footer>
 </div>
   
@@ -12,11 +24,11 @@ import Nav from './within/Nav'
 import Card from './within/Card'
 import Sidemenu from './within/Sidemenu'
 import Footer from '../small/Footer'
-import Main from './within/Main'
+import MainSearch from './within/MainSearch'
 export default {
     data(){
         return{
-
+            
         }
     },
     components:{
@@ -24,7 +36,7 @@ export default {
         Card,
         Sidemenu,
         Footer,
-        Main
+        MainSearch
     }
   
 }

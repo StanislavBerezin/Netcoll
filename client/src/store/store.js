@@ -13,6 +13,14 @@ export default new Vuex.Store({
             extraToken: null,
             username: null,
             university: null,
+            email: null,
+            units:[
+                
+            ],
+            purchasedArticles:[],
+            following:[],
+            credit: null,
+
         }
     },
 
