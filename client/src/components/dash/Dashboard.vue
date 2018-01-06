@@ -2,17 +2,34 @@
 <div class="grid">
     <Nav class="navigation"></Nav>
     <Sidemenu class="row sidemenu"></Sidemenu>
-    <section class="maincontent">
-        <b-tabs >
 
-            <b-tab-item label="Search">
-                   <MainSearch></MainSearch>
+    
+
+    <section class="maincontent">
+        <router-view></router-view>
+     
+             <!-- <b-tabs v-if="isUnit">
+
+            <b-tab-item label="Search" >
+                    <router-view></router-view>
+                    <keep-alive>
+                        <MainSearch></MainSearch>
+                    </keep-alive>
+                   
             </b-tab-item>
 
             <b-tab-item label="View purchased">
-               
+                    <keep-alive>
+                        <MainUnit></MainUnit>
+                    </keep-alive>
+                    
             </b-tab-item>
         </b-tabs>
+        <div v-else>
+            <FindUnit></FindUnit>
+        </div> -->
+
+       
     </section>
  
     <Footer class="footer"></Footer>
@@ -20,15 +37,17 @@
   
 </template>
 <script>
-import Nav from './within/Nav'
-import Card from './within/Card'
-import Sidemenu from './within/Sidemenu'
+import Nav from './Nav'
+import Card from './withinUnits/Card'
+import Sidemenu from './Sidemenu'
 import Footer from '../small/Footer'
-import MainSearch from './within/MainSearch'
+import MainSearch from './withinUnits/MainSearch'
+import MainUnit from './withinUnits/MainUnit'
+import FindUnit from './beforeUnits/FindUnit'
 export default {
     data(){
         return{
-            
+            isUnit: true
         }
     },
     components:{
@@ -36,15 +55,20 @@ export default {
         Card,
         Sidemenu,
         Footer,
-        MainSearch
+        MainSearch,
+        MainUnit,
+        FindUnit
+    },
+    methods:{
+        goSearch(){
+            router.push({name: "MainSearch"})
+        }
     }
   
 }
 </script>
-<style scoped>
-.test{
-    border: 2px solid red;
-}
+<style  scoped>
+
 .grid{
     display: grid;
     grid-template-columns: repeat(24, 1fr)

@@ -18,16 +18,31 @@
           <hr class="dropdown-divider">
           <b-dropdown-item>
             <p>
+                
+                <router-link :to="{name: 'userProfile'}">
+                  <b-icon icon="account"></b-icon>
+                    My profile
+                </router-link>
+                            
+            </p>
+                            
+                        
+          </b-dropdown-item>
+            <b-dropdown-item>
+            <p>
                 <b-icon icon="account"></b-icon>
-                            My profile
+                            Become a content creator
             </p>
                             
                         
           </b-dropdown-item>
            <b-dropdown-item>
             
-                            <b-icon icon="basket"></b-icon>
+                    <router-link :to="{name: 'purchasedArticles'}">
+                  <b-icon icon="basket"></b-icon>
                             My purchase history
+                </router-link>
+                           
                         
           </b-dropdown-item>
           
@@ -84,7 +99,7 @@
 
           <a class="navbar-item">
               <b-icon icon="school" style="margin-right:15px;"></b-icon>
-                        <span>Queensland University of Technology</span>
+                        <span>Enrolled at:  {{uni}}</span>
                         
                     </a>
 
@@ -99,7 +114,8 @@
     data() {
       return {
 
-        navigation: 'home'
+        navigation: 'home',
+        uni: "QUT"
       }
     }
   }
@@ -107,7 +123,7 @@
 </script>
 <style scoped>
   nav {
-    background-color: rgba(52, 152, 219, 1.0);
+    background-color: rgba(41, 128, 185,1.0);
     padding: 0px 10px;
   }
 
@@ -115,13 +131,13 @@
     margin-right: 10px; 
   }
   .navbar-end{
-       margin-right: 5%;
+       margin-right: 10%;
      
   }
   .navbar-brand{
     margin-left: 5%;
   }
-a.dropdown-item:hover{
+a.dropdown-item:hover, a.visited, a:link{
     color:#3273dc;
 }
 .fix{
@@ -129,5 +145,8 @@ a.dropdown-item:hover{
 }
 .navbar-item:hover{
   background-color:#2980b9;
+}
+a:link, a:visited{
+  color: #4a4a4a !important;
 }
 </style>
