@@ -4,17 +4,15 @@ import Router from 'vue-router'
 
 //for lazy loads
 const Intro = resolve => require(['@/components/Intro'], resolve)
-const Check = resolve => require(['@/components/Check'], resolve)
 const Dashboard = resolve => require(['@/components/dash/Dashboard'], resolve)
-const MakingArticle = resolve => require(['@/components/dash/createArticle/MakingArticle.vue'])
 
 
 const AsyncRoute = name => resolve => ({
   component: System.import(`@/components/${name}.vue`)
-  
+
   /*.then(mod => resolve(mod)),
   loading: Loading,
-  delay: 0, */ 
+  delay: 0, */
   //can add if need to load something
 });
 
@@ -24,20 +22,31 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history',
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'Introduction',
-      component:  Intro
+      component: Intro
     },
     {
       path: '/dashboard',
       name: "Dashboard",
       component: Dashboard,
-      children:[
-        {path: 'unit/:unitCode', component: AsyncRoute('dash/UnitDash'), name: 'Unit'},
-        {path: 'findUnit/:unitCode', component: AsyncRoute('dash/beforeUnits/FindUnit'), name: 'FindUnit'},
-        {path: 'purchasedArticles', component: AsyncRoute('dash/PurchasedArticles'), name: 'purchasedArticles'}
+      children: [{
+          path: 'unit/:unitCode',
+          component: AsyncRoute('dash/UnitDash'),
+          name: 'Unit'
+        },
+        {
+          path: 'findUnit/:unitCode',
+          component: AsyncRoute('dash/beforeUnits/FindUnit'),
+          name: 'FindUnit'
+        },
+        {
+          path: 'purchasedArticles',
+          component: AsyncRoute('dash/PurchasedArticles'),
+          name: 'purchasedArticles'
+        }
+
       ]
     },
     {
@@ -46,9 +55,15 @@ export default new Router({
       component: AsyncRoute('profile/Profile')
     },
     {
-      path: '/makingArticle',
+      path: '/dashboard/makingArticle',
       name: "CreatingArticle",
-      component: MakingArticle
+      component: AsyncRoute('dash/createArticle/MakingArticle')
+    },
+    {
+      path: '/dashboard/article/:id',
+      component: AsyncRoute('dash/viewArticle/Article'),
+      name: 'ViewArticle'
     }
-  ] 
+
+  ]
 })

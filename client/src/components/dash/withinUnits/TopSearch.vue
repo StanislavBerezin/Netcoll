@@ -1,10 +1,10 @@
 <template>
   <div class="main">
     <section class="hashtag">
-      <h1 class="subtitle is-3" style="margin-bottom: 1.5rem">{{unit}}</h1>
+      <h1 class="subtitle is-3" style="margin-bottom: 1.5rem">Unit {{unit}}</h1>
       <b-tooltip label="Add tags, e.g 'Week 4', 'Tutorial 4', 'Assignment 1' anything relevant to your unit" position="is-right"
         type="is-info" animated>
-        <p style="margin-bottom:1.5rem">Tags (What is it?)</p>
+        <p style="margin-bottom:1.5rem">Filter your search by tags</p>
       </b-tooltip>
       <b-field label="" style="margin-top:0.2rem;">
         <b-taginput v-model="tags" maxtags="10" type="is-success" rounded icon="label" placeholder="Add a tag">
@@ -122,6 +122,9 @@
         '$route' (to, from) {
             this.unit = this.$route.params.unitCode
          }
+    },
+    created(){
+           this.unit = this.$route.params.unitCode
     },
   
     methods: {
