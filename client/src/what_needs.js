@@ -1,6 +1,7 @@
 /*
     //NOT urgent
     //INTRO PAGE again
+    Some changes made by Stas
     1) Mobile respnsivness for the top menu => should have a dropdown for login, register
     2) Need to add section ('About us')
     3) Functionality to compare passwords on UI
