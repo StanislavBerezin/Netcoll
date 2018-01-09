@@ -1,6 +1,6 @@
 /*
     //NOT urgent
-    //INTRO PAGE again
+    //INTRO PAGE again from my branch
     1) Mobile respnsivness for the top menu => should have a dropdown for login, register
     2) Need to add section ('About us')
     3) Functionality to compare passwords on UI
