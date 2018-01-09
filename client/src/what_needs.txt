@@ -23,8 +23,12 @@
     2) stars rating
     3) rating section, share section for facebook to get discounts for further buyings
     4)Fixed thingy to ask for ratings
+	- Star rating
+	- Price
+	- "buy now"
     5) Comments can have a highlight as "negative:red" "neutral: grey" "positive: green"
     plus on the top of the comments users can see how many positives and negatives
+	OR can have a percentage with a dropdown with options to only show positive or negative comments
     6) Circled profile picture with degree right after the article itself
     7) If user hasn't bought the article only certain parts should be shown, a content creator choses which ones
     
