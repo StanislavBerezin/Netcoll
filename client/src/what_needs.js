@@ -1,7 +1,12 @@
 /*
     //NOT urgent
+<<<<<<< HEAD
     //INTRO PAGE again
     Some changes made by Stas
+=======
+    Some changes made by Caleb
+    //INTRO PAGE again test 2, see what is inside
+>>>>>>> 041fca0e49698f2b590efad1d9757487ff50e9de
     1) Mobile respnsivness for the top menu => should have a dropdown for login, register
     2) Need to add section ('About us')
     3) Functionality to compare passwords on UI
