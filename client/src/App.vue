@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    
+    <h1> added </h1>
     <router-view/>
-    <h1> Hello there, wer are testing it </h1>
+    
   </div>
 </template>
 
