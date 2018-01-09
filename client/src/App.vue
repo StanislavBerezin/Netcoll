@@ -2,6 +2,7 @@
   <div id="app">
     <h1>And i do test here</h1>
     <router-view/>
+    <h1> Hello there, wer are testing it </h1>
   </div>
 </template>
 
