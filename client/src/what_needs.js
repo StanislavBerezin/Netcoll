@@ -26,6 +26,8 @@
     5) Comments can have a highlight as "negative:red" "neutral: grey" "positive: green"
     plus on the top of the comments users can see how many positives and negatives
     6) Circled profile picture with degree right after the article itself
+    7) If user hasn't bought the article only certain parts should be shown, a content creator choses which ones
+    
 
 
     //Article creator
@@ -45,9 +47,9 @@
     
     What can be viewed by others
 
-    
+
     CONTENT CREATORS{
-            2) Students can click on content creator label and view their profile to book tutoring sessions
+            Students can click on content creator label and view their profile to book tutoring sessions
             Content creators have somewhat different UI design when viewing their profile
             1) Booking times
             2) Created articles, and rating for them
