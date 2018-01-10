@@ -7,8 +7,8 @@
             </a>
 
     <b-dropdown v-model="navigation" position="is-bottom-left">
-    <a class="navbar-item" slot="trigger">
-                        <span>John Smith</span>
+    <a class="navbar-item shadow" slot="trigger">
+                        <span> John Smith</span>
                         <b-icon icon="menu-down"></b-icon>
     </a>
 
@@ -56,7 +56,7 @@
         </b-dropdown>
 
          <b-dropdown v-model="navigation" position="is-bottom-left">
-      <a class="navbar-item" slot="trigger"> Credit: $ 25  <b-icon icon="menu-down"></b-icon></a>
+      <a class="navbar-item shadow" slot="trigger"> Credit: $ 25  <b-icon icon="menu-down"></b-icon></a>
       <b-dropdown-item custom>
             Transaction options</b>
           </b-dropdown-item>
@@ -97,7 +97,7 @@
   
       <div class="navbar-end">
 
-          <a class="navbar-item">
+          <a class="navbar-item shadow">
               <b-icon icon="school" style="margin-right:15px;"></b-icon>
                         <span>Enrolled at:  {{uni}}</span>
                         
@@ -125,8 +125,16 @@
   nav {
     background-color: rgba(41, 128, 185,1.0);
     padding: 0px 10px;
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 10px -6px #999;
+    border-bottom: 2px solid #95a5a6(155, 89, 182, 0.5);
   }
-
+.shadow{
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+}
   .icon {
     margin-right: 10px; 
   }

@@ -19,13 +19,12 @@
 
     
     //ARTICLE (need to work more)
-   
-    2) stars rating
-    3) rating section, share section for facebook to get discounts for further buyings
-    4)Fixed thingy to ask for ratings
-	- Star rating
-	- Price
-	- "buy now"
+            CAN BE DONE AT THE later stage{
+
+                3)share section for facebook to get discounts for further buyings
+
+            }
+                
 
     
 
