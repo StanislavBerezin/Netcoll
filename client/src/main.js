@@ -5,13 +5,14 @@ import App from './App'
 import router from './router'
 import store from './store/store'
 import sync from 'vuex-router-sync'
-const Buefy = require('buefy')
+import Buefy from 'buefy'
 import mystyle from './mystyle.sass'
+import 'font-awesome/css/font-awesome.min.css'
 
 
 
 
-Vue.use(Buefy.default)
+Vue.use(Buefy)
 
 
 Vue.component('star-rating', {

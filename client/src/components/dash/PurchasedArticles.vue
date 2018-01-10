@@ -34,7 +34,7 @@
         </b-table-column>
     
     <b-table-column label="Status"> 
-                <a class="button is-danger  " disabled>Finished</a>
+                <a class="button is-danger is-static fix-finished">Finished</a>
         </b-table-column>
 
         <b-table-column>
@@ -121,5 +121,9 @@
 <style scoped>
  .fix{
      max-width: 818px;
+ }
+ .fix-finished{
+   background-color:rgba(255, 31, 75, 0.5);
+   color: #fff;
  }
 </style>
