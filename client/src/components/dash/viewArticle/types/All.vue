@@ -1,13 +1,13 @@
 <template>
 <div>
-        <article class="media">
+    <article class="media">
   <figure class="media-left">
     <p class="image is-64x64">
       <img src="https://bulma.io/images/placeholders/128x128.png">
     </p>
   </figure>
   <div class="media-content">
-      <b-message type="is-danger">
+      <b-message type="is-success">
             
         
     <div class="content">
@@ -50,7 +50,7 @@
         </p>
       </figure>
       <div class="media-content">
-          <b-message type="is-danger">
+          <b-message>
         <div class="content">
           <p>
             <strong>Kayli Eunice </strong>
@@ -92,7 +92,6 @@ export default {
   
 }
 </script>
-
 <style scoped>
 
 </style>

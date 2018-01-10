@@ -17,7 +17,7 @@
             </div>
             <div class="comments">
                <p>Ratings</p>   
-         <star-rating :stars="stars" show-grey class="ratings"> </star-rating>
+         <!-- <star-rating :stars="stars" :key="" show-grey class="ratings"> </star-rating> -->
          
                 <h1 class="subtitle is-3" >Comments</h1>
                 <Comments></Comments>
@@ -76,7 +76,7 @@ export default {
 }
 .mainText{
 
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
     margin-bottom: 3rem;
    
@@ -90,8 +90,10 @@ export default {
     margin: 20px 0;
 }
 .comments{
-   
     text-align: left;
+    
+    max-width: 900px;
+    margin: 0 auto;
 }
 .test{
     border: 2px solid red;

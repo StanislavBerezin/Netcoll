@@ -1,97 +1,105 @@
 <template>
   <div>
-    <article class="media">
-  <figure class="media-left">
-    <p class="image is-64x64">
-      <img src="https://bulma.io/images/placeholders/128x128.png">
-    </p>
-  </figure>
-  <div class="media-content">
-    <div class="content">
-      <p>
-        <strong>Barbara Middleton</strong>
-        <br>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis.
-        <br>
-        <small><a>Like</a> · <a>Reply</a> · 3 hrs</small>
-      </p>
-    </div>
+    <div class="selected">
 
-    <article class="media">
-      <figure class="media-left">
-        <p class="image is-48x48">
-          <img src="https://bulma.io/images/placeholders/96x96.png">
-        </p>
-      </figure>
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <strong>Sean Brown</strong>
-            <br>
-            Donec sollicitudin urna eget eros malesuada sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam blandit nisl a nulla sagittis, a lobortis leo feugiat.
-            <br>
-            <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
-          </p>
-        </div>
+      <div class="comparision">
+        <a class="button is-dark is-outlined" @click="selectedComponent='All'" 
+        :class ="{active: isActive}">
+        <b-icon icon="comment-text-outline"></b-icon> <p>All: 6</p></a>
 
-        <article class="media">
-          Vivamus quis semper metus, non tincidunt dolor. Vivamus in mi eu lorem cursus ullamcorper sit amet nec massa.
-        </article>
+        <a class="button is-success is-outlined" @click="selectedComponent='Positive'" 
+        :class ="{active: isActive}">
 
-        <article class="media">
-          Morbi vitae diam et purus tincidunt porttitor vel vitae augue. Praesent malesuada metus sed pharetra euismod. Cras tellus odio, tincidunt iaculis diam non, porta aliquet tortor.
-        </article>
+       <b-icon icon="comment-plus-outline" class="pos"></b-icon> <p>Positive: 3</p> </a>
+
+
+        <a class="button is-outlined" @click="selectedComponent='Neutral'" 
+        :class ="{active: isActive1}">
+       <b-icon icon="comment-outline"></b-icon>  <p> Neutral: 2</p> </a>
+      <a class="button is-danger is-outlined" @click="selectedComponent='Negative'" 
+        :class ="{active: isActive2}">
+       <b-icon icon="comment-remove-outline" class="neg"></b-icon>   <p> Negative: 1</p> </a>
+
+        <a class="button is-white is-static">
+         <b-icon icon="comment-text-outline"></b-icon><p>Percentage: 63%</p> </a>
       </div>
-    </article>
+      
 
-    <article class="media">
-      <figure class="media-left">
-        <p class="image is-48x48">
-          <img src="https://bulma.io/images/placeholders/96x96.png">
-        </p>
-      </figure>
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <strong>Kayli Eunice </strong>
-            <br>
-            Sed convallis scelerisque mauris, non pulvinar nunc mattis vel. Maecenas varius felis sit amet magna vestibulum euismod malesuada cursus libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus lacinia non nisl id feugiat.
-            <br>
-            <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
-          </p>
-        </div>
-      </div>
-    </article>
-  </div>
-</article>
-<article class="media">
-  <figure class="media-left">
-    <p class="image is-64x64">
-      <img src="https://bulma.io/images/placeholders/128x128.png">
-    </p>
-  </figure>
-  <div class="media-content">
-    <div class="field">
-      <p class="control">
-        <textarea class="textarea" placeholder="Add a comment..."></textarea>
-      </p>
+
+      
+
+
     </div>
-    <div class="field">
-      <p class="control">
-        <button class="button">Post comment</button>
-      </p>
-    </div>
-  </div>
-</article>
+
+    <transition name = "slide-fade">
+    <component :is="selectedComponent"></component>
+</transition>
   </div>
 </template>
 <script>
+  import Negative from './types/Negative'
+  import Neutral from './types/Neutral'
+  import Positive from './types/Positive'
+  import All from './types/All'
   export default {
+    data() {
+      return {
+        selectedComponent: 'Positive',
+        isActive: true,
+        isActive1: false,
+        isActive2: false
+      }
+    },
+    components: {
+      Negative,
+      Neutral,
+      Positive,
+      All
+    },
+    methods:{
+         myFilter: function(){
+            this.isActive = !this.isActive;
+          
+        }
+    }
 
   }
 
 </script>
 <style scoped>
+.selected{
+    margin-bottom:3rem;
+}
+.comparision{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(236, 240, 241,1.0);
+  padding:20px;
+  justify-content: space-between;
+  margin-bottom:20px;
+}
+.comparision a{
+  margin: 10px;
+}
+.pos{
+  color:#23d160;
+  margin-right:52px;
+}
+.neg{
+  color: #ff3860;
+}
+.neu{
 
-
+}
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(3.0, 2, 3, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(501px);
+  opacity: 0;
+}
 </style>
