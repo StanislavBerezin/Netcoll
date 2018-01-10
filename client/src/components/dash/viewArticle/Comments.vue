@@ -21,7 +21,7 @@
        <b-icon icon="comment-remove-outline" class="neg"></b-icon>   <p> Negative: 1</p> </a>
 
         <a class="button is-white is-static">
-         <b-icon icon="comment-text-outline"></b-icon><p>Percentage: 63%</p> </a>
+         <b-icon icon="comment-text-outline"></b-icon><p>Percentage: <span style="color:#23d160;">63%</span></p> </a>
       </div>
       
 
@@ -67,6 +67,7 @@
 
 </script>
 <style scoped>
+
 .selected{
     margin-bottom:3rem;
 }
@@ -74,6 +75,7 @@
   display: flex;
   flex-wrap: wrap;
   background-color: rgba(236, 240, 241,1.0);
+  border-radius: 20px;
   padding:20px;
   justify-content: space-between;
   margin-bottom:20px;
@@ -81,16 +83,8 @@
 .comparision a{
   margin: 10px;
 }
-.pos{
-  color:#23d160;
-  margin-right:52px;
-}
-.neg{
-  color: #ff3860;
-}
-.neu{
 
-}
+
 .slide-fade-enter-active {
   transition: all .3s ease;
 }

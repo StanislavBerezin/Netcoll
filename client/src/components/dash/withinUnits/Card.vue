@@ -16,28 +16,10 @@
         <span> {{students}} </span>Students
        
 
-         <!-- <star-rating :stars="5"></star-rating>
-         <star-rating :stars="3"></star-rating>
-         <star-rating :stars="stars" show-grey></star-rating> -->
 
-        <!-- v-for after -->
         <div class="rating">
 
-          <b-icon icon='star'>
-
-          </b-icon>
-          <b-icon icon='star'>
-
-          </b-icon>
-          <b-icon icon='star'>
-
-          </b-icon>
-          <b-icon icon='star'>
-
-          </b-icon>
-          <b-icon icon='star'>
-
-          </b-icon>
+          <star-rating :stars="stars" show-grey class="ratings" color="is-info"> </star-rating>
           <h1 class="title is-4"><b>${{price}}</b></h1>
         </div>
 
@@ -48,6 +30,7 @@
 
 </template>
 <script>
+ import StarRating from '../../../microComponents/Stars.vue'
   export default {
       data(){
           return{
@@ -55,8 +38,12 @@
               title: "Week 7 help",
               students: 70,
               rating: 5,
-              price: 5
+              price: 5,
+              stars: 3
           }
+      },
+      components:{
+          StarRating
       }
 
   }

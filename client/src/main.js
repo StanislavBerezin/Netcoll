@@ -15,35 +15,6 @@ import 'font-awesome/css/font-awesome.min.css'
 Vue.use(Buefy)
 
 
-Vue.component('star-rating', {
-	props:{
-  	stars:{
-    	type:Number,
-      required:true
-    },
-    showGrey:{
-    	type:Boolean
-    }
-  },
-	template:`
-  <div>
-  	<template v-if="showGrey">
-    	<b-icon
-        v-for="n in 5"
-        icon="star"
-        :type="n <= stars ? 'is-warning' : 'is-grey'"
-        :key="n"
-      />
-    </template>
-    <template v-else>
-    	<b-icon
-      	v-for="n in stars"
-        icon="star"
-        type="is-warning"
-      />
-    </template>
-  </div>`
-})
 
 
 

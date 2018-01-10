@@ -77,6 +77,7 @@
 
 </script>
 <style scoped>
+
   .is-rounded {
     border-radius: 20px;
   }
