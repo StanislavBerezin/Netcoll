@@ -11,8 +11,6 @@
         recieved from server, the same for success (not really needed but would be cool)
 
 
-
-
         Sidemenu IMPORTANT
     1) Adding and removing units => will be done through adding units to the array 'units' and removing it from there
 
@@ -38,24 +36,42 @@
 
     //Profiles 
     REGULAR USER{
-        add extra buttons, one button to change the details, and all static text becomes input fields
-        another button to accept the changes
+        maybe add facebook profile as a reference
+
+        What can be viewed by others{
+            basic information(done) and facebook profile(will be done later)
+        }
 
     }
-    Regular users almost have nothing to be displayed on their account, can be completly private
-    displaying just name.
     
-    
-    What can be viewed by others
-
-
     CONTENT CREATORS{
-            Students can click on content creator label and view their profile to book tutoring sessions
-            Content creators have somewhat different UI design when viewing their profile
-            1) Booking times
-            2) Created articles, and rating for them
-            3) Payment system when booked (modals)
-            4) Chat (socket IO, example)
+
+            If you are the content creator{
+                1) Set booking times
+                2) see the activity of your articles
+            }
+
+            If you are VIEWING content creator profile{
+                1) See available times in a form of table{
+                    .1 time availability
+                    .2 price per hour / half an hour
+                    .3 button to book
+                    
+                }
+                2) See the articles in a form of table {
+                    .1 have name of article
+                    .2 Number of students
+                    .3 Ratings in percentage (possitive against the rest)
+                    .4 button to go to the article
+
+                }
+
+                In the future will add chat etc, but for the moment is not that crucial
+            }
+
+            AT the later stage
+            3) Payment system when booked (modals) (at the later stage)
+            4) Chat (socket IO, example) (at the later stage)
     }
 
     

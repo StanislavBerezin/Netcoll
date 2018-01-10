@@ -50,9 +50,20 @@ export default new Router({
       ]
     },
     {
-      path: '/dashboard/profile',
+      path: '/dashboard/profile/:id',
       name: 'userProfile',
-      component: AsyncRoute('profile/Profile')
+      component: AsyncRoute('profile/Profile'),
+      children: [{
+          path: 'bookings',
+          component: AsyncRoute('profile/creator/components/Sessions'),
+          name: 'bookSession'
+        },
+        {
+          path: 'createdArticles',
+          component: AsyncRoute('profile/creator/components/CreatedArticles'),
+          name: 'createdArticles'
+        }
+      ]
     },
     {
       path: '/dashboard/makingArticle',

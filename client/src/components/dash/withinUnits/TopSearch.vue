@@ -7,7 +7,7 @@
         <p style="margin-bottom:1.5rem">Filter your search by tags</p>
       </b-tooltip>
       <b-field label="" style="margin-top:0.2rem;">
-        <b-taginput v-model="tags" maxtags="10" type="is-success" rounded icon="label" placeholder="Add a tag">
+        <b-taginput v-model="tags" maxtags="10" type="is-mypurple" rounded icon="label" placeholder="Add a tag">
         </b-taginput>
 
       </b-field>
@@ -23,7 +23,7 @@
     margin-bottom: 20px;">
         <span class="names_drop">Price:</span>
         <b-dropdown v-model="isPrice">
-          <button class="button is-success" type="button" slot="trigger">
+          <button class="button is-mypurple" type="button" slot="trigger">
             <template v-if="isPrice">
                 <span>From low to high</span>
             </template>
@@ -59,7 +59,7 @@
         </div>
         <span class="names_drop">Popularity:</span>
         <b-dropdown v-model="isPopular">
-          <button class="button is-success" type="button" slot="trigger">
+          <button class="button is-mypurple" type="button" slot="trigger">
             <template v-if="isPopular">
                 <span>From low to high</span>
             </template>
@@ -92,7 +92,7 @@
     </div>
 
 
-    <a class="button search" @click.prevent="search">Search</a>
+    <a class="button search is-info" @click.prevent="search">Search</a>
 
   </div>
 
@@ -174,7 +174,7 @@
   .search {
     grid-column: 1/13;
     height: 100px;
-    background-color: rgba(41, 128, 185, 1.0);
+    
     color: #fff;
   }
 
