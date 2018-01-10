@@ -20,7 +20,10 @@
         <div class="rating">
 
           <star-rating :stars="stars" show-grey class="ratings" color="is-info"> </star-rating>
-          <h1 class="title is-4"><b>${{price}}</b></h1>
+          <div class="flexing">
+                 <p class="before">A${{oldPrice}}</p><h1 class="title is-4"> <b>A${{price}}</b></h1>
+          </div>
+         
         </div>
 
       </div>
@@ -38,8 +41,9 @@
               title: "Week 7 help",
               students: 70,
               rating: 5,
-              price: 5,
-              stars: 3
+              price: 4.99,
+              stars: 3,
+              oldPrice: 7.99
           }
       },
       components:{
@@ -54,16 +58,20 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     width: 100%;
-    max-width: 200px;
+    max-width: 210px;
     border: 1px solid rgba(189, 195, 199, .7)
   }
 
   .card:hover {
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+    background: rgba(189, 195, 199, 0.3);
+    cursor: pointer;
   }
 
   .container {
     padding: 10px;
+    width: 100%;
+    max-width: 210px;
   }
 
   .container:nth-child(odd) {
@@ -73,7 +81,23 @@
   .icon {
     color: rgba(41, 128, 185, 1.0);
   }
-.rating{
-    margin-top:10px;
+
+.ratings{
+    margin:1rem 0;
+    text-align: left;
+}
+.flexing{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:flex-end;
+}
+.before{
+    text-decoration: line-through;
+    margin-right:7px;
+    margin-top:3px;
+}
+h1{
+    text-align:right;
+    margin-right:2%;
 }
 </style>

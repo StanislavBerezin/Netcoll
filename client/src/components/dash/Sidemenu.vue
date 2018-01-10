@@ -8,11 +8,11 @@
         <li>
 
           <b-field>
-            <b-input placeholder="Search..." type="search" icon="magnify" v-model="unitSearch">
+            <b-input placeholder="Search..." type="search"  class="" icon="magnify" v-model="unitSearch">
             </b-input>
 
             <p class="control">
-              <router-link class="zero" :to="{name: 'FindUnit', params:{unitCode: unitSearch}}"><button class="button is-success">Search</button></router-link>
+              <router-link class="zero" :to="{name: 'FindUnit', params:{unitCode: unitSearch}}"><button class="button is-mypurple">Search</button></router-link>
             </p>
           </b-field>
 
@@ -93,13 +93,14 @@
   }
 
   .router-link-active {
-    background-color: #23d160;
+    background: rgba(141,48,196, 0.8); 
+
     border-radius: 8px;
     color: #fff;
   }
 
   a:hover {
-    background-color: rgba(39, 174, 96, 1.0);
+     background: rgba(141,20,230, 0.5); 
     border-radius: 8px;
     color: #fff;
   }

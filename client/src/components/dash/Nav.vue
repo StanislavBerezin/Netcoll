@@ -123,7 +123,7 @@
 </script>
 <style scoped>
   nav {
-    background-color: rgba(41, 128, 185,1.0);
+    background-color: #209cee;
     padding: 0px 10px;
     -webkit-box-shadow: 0 8px 6px -6px #999;
     -moz-box-shadow: 0 8px 6px -6px #999;

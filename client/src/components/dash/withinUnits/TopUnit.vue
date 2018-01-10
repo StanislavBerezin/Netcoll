@@ -26,7 +26,7 @@
          
  
     <b-dropdown v-model="isSort" class="right">
-        <button class="button is-success" type="button" slot="trigger">
+        <button class="button is-mypurple" type="button" slot="trigger">
             <template v-if="isSort">
                 <span>Recent</span>
             </template>
