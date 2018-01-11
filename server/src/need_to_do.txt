@@ -66,3 +66,64 @@ Need to:
     - returnSubjectByName
     - returnSubjectByCode
     - returnSubjects
+
+Objects that schemas need to be created for:
+ - Articles
+    - articleId
+    - Title
+    - Contents
+    - Image
+    - Date Published
+    - Author
+    - originalPrice
+    - isOnSale (bool)
+    - currentPrice (ie. current effective price)
+    - Purchase count
+    - Week number (Week number of the subject that the article relates to). Should be a list of numbers
+    - Ratings
+    - Average rating (current rating)
+    - commentCount
+    - positiveCommentCount
+    - neutralCommentCount
+    - negativeCommentCount
+    - percentCommentsPositive
+ - Comments on articles
+    - comment Author
+    - Comment text
+    - Comment like count
+    - Parent comment (if the comment is a reply to another comment)
+    - timeCreated
+    - Tags (list of strings)
+ - Users
+    - userId
+    - Purchased articles (list of article ids)
+        - purchaseDate
+        - articleId
+        - purchasePrice
+    - Enrolled subjects
+        - subjectId
+        - isCurrent (bool, indicated whether the student has finished this subject or not)
+
+DB Controller functions that need to be created:
+ - Articles:
+    returnArticle()
+        - Returns title, published date, author, averageRating, comments
+    returnAuthorArticleData()
+        - Returns an author's metrics to be displayed in the article page, ie. the author's profile picture, publication
+          count, follower count, degree
+    returnArticleBySubjectCode()
+        - Returns a list containing all articles belonging to the specified subject code. This will be used in the Unit
+          view. Returns the article image, author, week numbers, purchase count
+    returnPurchasedArticlesByUserId()
+        - Returns a list of articles that a user has purchased. Will be used in the Unit view. Will return subjectCode,
+          subjectName, purchaseDate,
+
+ - Users:
+     returnFollowedUsers()
+         - Returns a list containing all users that the specified user is following. Will be used in the Unit view
+
+ - Subjects:
+     returnSubjectsByUserId()
+         - Returns a list containing all the subjects a user is currently enrolled in. This will be used in the Unit view
+     returnSubjectByKeyword()
+         - Returns a list of subjects matching specified keyword. Will be used for the unit selector

@@ -36,6 +36,7 @@ const subjectSchema = mongoose.Schema({
         ref: 'Course',
         required: true
     }]
+    // TODO - Add relational university based on the course the subject belongs to
 });
 
 // TODO - Add the controller here
