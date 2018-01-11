@@ -55,3 +55,10 @@ When a user presses on "Selected Articles" =>{
 }
 
 
+//Database stuff:
+
+Need to:
+ - Maintain a local list of universities on our server
+ - Write a lookup function for the university list. This will be used to validate university names eg. on registration
+ - Maintaina local list of univsersity's courses and subjects on our server
+ - Write a lookup function for the subject/code list

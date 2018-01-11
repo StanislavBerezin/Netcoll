@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const userSchema = mongoose.Schema({
 
@@ -9,6 +9,14 @@ const userSchema = mongoose.Schema({
         trim: true,
         minlength: 3,
 
+    },
+    firstName: {
+        type: String,
+        required: false
+    },
+    lastName: {
+        type: String,
+        required: false
     },
     email: {
         type: String,
@@ -22,6 +30,10 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    course: {
+        type: String,
+        required: false
+    },
     tokens:[{
         access:{
             type: String,
@@ -33,12 +45,12 @@ const userSchema = mongoose.Schema({
         }
     }]
     
-})
+});
 
 //getting the methods
-require('./userController/UserController')(userSchema)
+require('./userController/UserController')(userSchema);
 
 
-module.exports = mongoose.model('User', userSchema)
+module.exports = mongoose.model('User', userSchema);
 
 //need bcrypt, mongoose,
