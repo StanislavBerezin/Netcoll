@@ -12,20 +12,27 @@
         </b-table-column>
              
 
-        <b-table-column label="Unit name">
-          {{ props.row.first_name }}
+        <b-table-column label="Article name">
+          {{ props.row.unit_name }}
+        </b-table-column>
+        <b-table-column label="Student #">
+          {{ props.row.students }}
         </b-table-column>
 
    
 
 
-<b-table-column label="Purchased on">
-          {{ props.row.purchaseDate }}
+<b-table-column label="New comments">
+        <a class="button is-success color is-static"  style="width:100%;">{{ props.row.new_comments }}</a>
+          
+        </b-table-column>
+
+        <b-table-column label="Sold in $">
+        <a class="button is-success is-static color" style="width:100%;">{{ props.row.sold }}</a>
+          
         </b-table-column>
     
-    <b-table-column label="Status"> 
-                <a class="button is-danger is-static fix-finished">Finished</a>
-        </b-table-column>
+
 
         <b-table-column>
                 <a class="button is-info is-rounded">Read</a>
@@ -54,33 +61,39 @@
    data() {
       const tableDataSimple = [{
           'id': 'CAB201',
-          'first_name': 'Programming principles',
-          'last_name': '125',
-          'purchaseDate': '13.08.2017'
+          'unit_name': 'OOP c#',
+          'students': '125',
+          'new_comments': "2",
+          'sold': "150$"
+          
         },
         {
-          'id': 'CAB131',
-          'first_name': 'Programming principles',
-          'last_name': '125',
-          'purchaseDate': '13.08.2017'
+          'id': 'CAB201',
+          'unit_name': 'Business principles',
+          'students': '125',
+          'new_comments': "2",
+          'sold': "150$"
         },
         {
-          'id': 'CAB421',
-          'first_name': 'Programming principles',
-          'last_name': '125',
-          'purchaseDate': '13.08.2017'
+          'id': 'CAB201',
+          'unit_name': 'Microprocessors unit',
+          'students': '125',
+          'new_comments': "2",
+          'sold': "150$"
         },
         {
-          'id': 'CAB125',
-          'first_name': 'Programming principles',
-          'last_name': '125',
-          'purchaseDate': '13.08.2017'
+          'id': 'CAB201',
+          'unit_name': 'Preparation for final exam',
+          'students': '125',
+          'new_comments': "2",
+          'sold': "150$"
         },
         {
-          'id': 'CAB623',
-          'first_name': 'Programming principles',
-          'last_name': '125',
-          'purchaseDate': '13.08.2017'
+          'id': 'CAB201',
+          'unit_name': 'Programming principles',
+          'students': '125',
+          'new_comments': "2",
+          'sold': "150$"
         }
       ]
 
@@ -109,14 +122,18 @@
 
 </script>
 <style scoped>
-
+.color{
+  background-color:rgba(46, 204, 113, 0.8);
+  color: #fff;
+}
  .fix-finished{
    background-color:rgba(255, 31, 75, 0.5);
    color: #fff;
  }
  .all{
-     border:2px solid red;
+
      display: flex;
      flex-direction: column;
+     margin-top:2rem;
  }
 </style>

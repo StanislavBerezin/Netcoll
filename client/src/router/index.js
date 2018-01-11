@@ -54,15 +54,43 @@ export default new Router({
       name: 'userProfile',
       component: AsyncRoute('profile/Profile'),
       children: [{
+        //for people viewing the session not for the creator
           path: 'bookings',
           component: AsyncRoute('profile/creator/components/Sessions'),
           name: 'bookSession'
         },
         {
+          //also for the people viewing the profile
           path: 'createdArticles',
           component: AsyncRoute('profile/creator/components/CreatedArticles'),
           name: 'createdArticles'
+        },
+        
+        //for the content creator
+        {
+          path: 'edit',
+          component: AsyncRoute('profile/creator/components/Edit'),
+          name: 'editUser'
+        },
+        //for the content creator
+        {
+          path: 'income',
+          component: AsyncRoute('profile/creator/components/Income'),
+          name: 'income'
+        },
+        //for the content creator
+        {
+          path: 'setSession',
+          component: AsyncRoute('profile/creator/components/SetSessions'),
+          name: 'setSession'
+        },
+        //for the content creator
+        {
+          path: 'createArticle',
+          component: AsyncRoute('profile/creator/components/CreateArticle'),
+          name: 'createArticle'
         }
+
       ]
     },
     {

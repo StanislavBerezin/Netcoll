@@ -23,7 +23,7 @@ export default {
 <style lang="css" scoped>
 .footer{
 
-  background-color: #fff;
+  background-color:;
 }
 
 </style>
