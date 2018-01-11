@@ -10,7 +10,15 @@ const universitySchema = mongoose.Schema({
         type: String,
         required: true
     },
+    country: {
+        type: String,
+        required: true
+    },
     countryCode: {
+        type: String,
+        required: true
+    },
+    stateProvince: {
         type: String,
         required: true
     },
