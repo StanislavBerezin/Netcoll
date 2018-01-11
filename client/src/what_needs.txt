@@ -13,6 +13,8 @@
     8) Registration form data validation:
         a) Don't validate username field until the user has entered something (currently validates on load)
         b) Implement password mismatch validation
+        c) Keep a list of university options, validate input based on known list of universities. Don't let the enter an unknown uni.
+        d) Don't make the registration form disapppear when you click away from it; only when you click the x to close it
 
 
         Sidemenu IMPORTANT

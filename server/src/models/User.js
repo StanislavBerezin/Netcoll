@@ -10,6 +10,14 @@ const userSchema = mongoose.Schema({
         minlength: 3,
 
     },
+    firstName: {
+        type: String,
+        required: false
+    },
+    lastName: {
+        type: String,
+        required: false
+    },
     email: {
         type: String,
         required: true
@@ -21,6 +29,10 @@ const userSchema = mongoose.Schema({
     university:{
         type: String,
         required: true
+    },
+    course: {
+        type: String,
+        required: false
     },
     tokens:[{
         access:{
