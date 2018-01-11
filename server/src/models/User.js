@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const userSchema = mongoose.Schema({
 
@@ -45,12 +45,12 @@ const userSchema = mongoose.Schema({
         }
     }]
     
-})
+});
 
 //getting the methods
-require('./userController/UserController')(userSchema)
+require('./userController/UserController')(userSchema);
 
 
-module.exports = mongoose.model('User', userSchema)
+module.exports = mongoose.model('User', userSchema);
 
 //need bcrypt, mongoose,
