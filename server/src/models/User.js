@@ -48,16 +48,16 @@ const userSchema = mongoose.Schema({
         type: Number,
         required: false
     },
-    followers: {        // List of users that are following this user
-        // TODO
-    },
+//    followers: {        // List of users that are following this user
+//        // TODO
+//    },
     followerCount: {
         type: Number,
         required: false
-    },
-    following: {        // List of users that this user is following
-        // TODO
-    }
+//    },
+//    following: {        // List of users that this user is following
+//        // TODO
+//    }
     followingCount: {
         type: Number,
         required: false
