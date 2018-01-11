@@ -15,6 +15,7 @@
         b) Implement password mismatch validation
         c) Keep a list of university options, validate input based on known list of universities. Don't let the enter an unknown uni.
         d) Don't make the registration form disapppear when you click away from it; only when you click the x to close it
+    9) Add titles to HTML pages
 
 
         Sidemenu IMPORTANT
