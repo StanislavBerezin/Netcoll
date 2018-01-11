@@ -1,11 +1,19 @@
+go to SERVER folder and write ("npm start")
+
 Authentication{
-  Its done, there is nothing much to update at least for the moment
+
+  i did the signup, and login but havent implemented other validation coz simply didnt make any routes for that yet
+  
 }
+
+COMMENT => If authenticating routes will get tedious, then dont worry, just do it with responseData
+after will add authentication, but would be good if can get it.
+
 
 After login a user redirected to dashboard => {
 
      
-      must be a route apt.get(./getDashboardData, validateRequest, validateUserToken, responseData ) =>{
+      must be a route app.get(./getDashboardData, validateRequest, validateUserToken, responseData ) =>{
       
         At first we validate the request itself, of what we are receiving from the client, like if the token 
         is the string etc then call next(). Then we validate and find UserByToken and call next(), after these 2
@@ -20,4 +28,30 @@ After login a user redirected to dashboard => {
              
       }
 }
-  
+
+COMMENT => We need to have  MODEL for UNITS, which is relational to the user. e.g a user have units, better to make
+unit model on seperate file in models folder (the same structure as userModel)
+
+When a user presses on "PURCHASED ARTICLES" =>{
+
+        we do the same for the route app.get('/getPurchasedArticles, validateRequest, validateUserToken, responseData)=>{
+            
+            when all the validations passed, we already know what user is trying to access "Purchased Articles"
+            so we send the data of purchased articles. 
+        }
+}
+
+COMMENT => another relational model, each unit has ARTICLES, same structure as userModel
+
+When a user presses on "Selected Articles" =>{
+          
+          app.get('/getArticle/:id, validateRequest, validateUserToken, responseData){
+               Once all of the validation tests are done, we need to send article details
+               like "image" "Author" "Title" "Price" "Crossed Price"(can apply some calculation, should show 
+               roughly 20% higher of original" "Star ratings (type: number)" "amount of students"
+               
+               all of that should be in the model, and u can use function in Authentica
+          }
+}
+
+
