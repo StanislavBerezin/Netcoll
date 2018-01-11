@@ -1,30 +1,34 @@
 /*
     //NOT urgent
-    //INTRO PAGE 
+    //INTRO PAGE
     1) Mobile respnsivness for the top menu => should have a dropdown for login, register
     2) Need to add section ('About us')
     3) Functionality to compare passwords on UI
     4) Footer
     5) Make "how it works" section tabs smaller rather than 100% width, maybe add some cool icons
        а
-    6) Responses that we recieve from server when something is wrong should be displayed as "toast with error" 
+    6) Responses that we recieve from server when something is wrong should be displayed as "toast with error"
         recieved from server, the same for success (not really needed but would be cool)
+    7) Add a 404 page
+    8) Registration form data validation:
+        a) Don't validate username field until the user has entered something (currently validates on load)
+        b) Implement password mismatch validation
 
 
         Sidemenu IMPORTANT
     1) Adding and removing units => will be done through adding units to the array 'units' and removing it from there
 
 
-    
+
     //ARTICLE (need to work more)
             CAN BE DONE AT THE later stage{
 
                 3)share section for facebook to get discounts for further buyings
 
             }
-                
 
-    //Profiles 
+
+    //Profiles
     REGULAR USER{
         maybe add facebook profile as a reference
 
@@ -33,7 +37,7 @@
         }
 
     }
-    
+
     CONTENT CREATORS{
 
             If you are the content creator{
@@ -52,7 +56,7 @@
                     .1 time availability
                     .2 price per hour / half an hour
                     .3 button to book
-                    
+
                 }
                 2) See the articles in a form of table {
                     .1 have name of article
@@ -70,7 +74,7 @@
             4) Chat (socket IO, example) (at the later stage)
     }
 
-    
+
 
     //Payment methods
     //will need to check if stripe provides their own UI for payment or we can use our own.
@@ -78,6 +82,6 @@
     2) widhdraw modal
 
 
-    
-    
+
+
 */
