@@ -1,0 +1,23 @@
+Authentication{
+  Its done, there is nothing much to update at least for the moment
+}
+
+After login a user redirected to dashboard => {
+
+     
+      must be a route apt.get(./getDashboardData, validateRequest, validateUserToken, responseData ) =>{
+      
+        At first we validate the request itself, of what we are receiving from the client, like if the token 
+        is the string etc then call next(). Then we validate and find UserByToken and call next(), after these 2
+        succesful checks, we send the data itself which is {
+            
+            In this case we need to build a somewhat relational usermodel, where a user has
+             its own units, or doesnt have any if registered just a while ago
+        
+        }
+        
+         
+             
+      }
+}
+  
