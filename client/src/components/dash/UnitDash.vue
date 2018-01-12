@@ -5,7 +5,7 @@
 
 
     </ul>
-             <b-tabs>
+             <b-tabs type="is-boxed">
 
             <b-tab-item label="Search" >
                     <router-view></router-view>
