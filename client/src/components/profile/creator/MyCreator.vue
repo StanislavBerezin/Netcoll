@@ -4,6 +4,7 @@
       <router-link tag='a' class="button is-link" :to="{name: 'createdArticles'}">Activity of articles</router-link>
       <router-link tag='a' class="button is-link" :to="{name: 'createArticle'}">Create new article</router-link>
       <router-link tag='a' class="button is-link" :to="{name: 'setSession'}">Set sessions</router-link>
+       <router-link tag='a' class="button is-link" :to="{name: 'booked'}">Booked sessions</router-link>
       <router-link tag='a' class="button is-link" :to="{name: 'editUser'}">Edit personal information</router-link>
       <router-link tag='a' class="button is-link" :to="{name: 'income'}">Revenues</router-link>
 

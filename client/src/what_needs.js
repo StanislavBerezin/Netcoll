@@ -44,8 +44,10 @@
     CONTENT CREATORS{
 
             If you are the content creator{
-                1) Set booking times
-                2) see the activity of your articles
+                1) Set booking times{
+                    need to make it more dynamic with a better table
+                    drowdown inside of table to set pricing
+                }
                 3) Create article{
                         1)Pro keyboard from vue-awesome
                         2) Preview should be dynamic
@@ -61,13 +63,7 @@
                     .3 button to book
 
                 }
-                2) See the articles in a form of table {
-                    .1 have name of article
-                    .2 Number of students
-                    .3 Ratings in percentage (possitive against the rest)
-                    .4 button to go to the article
-
-                }
+                
 
                 In the future will add chat etc, but for the moment is not that crucial
             }

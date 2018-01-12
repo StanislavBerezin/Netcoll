@@ -65,7 +65,7 @@ export default new Router({
           component: AsyncRoute('profile/creator/components/CreatedArticles'),
           name: 'createdArticles'
         },
-        
+
         //for the content creator
         {
           path: 'edit',
@@ -89,6 +89,11 @@ export default new Router({
           path: 'createArticle',
           component: AsyncRoute('profile/creator/components/CreateArticle'),
           name: 'createArticle'
+        },
+         {
+          path: 'bookedSessions',
+          component: AsyncRoute('profile/creator/components/Booked'),
+          name: 'booked'
         }
 
       ]

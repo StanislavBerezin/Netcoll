@@ -1,5 +1,5 @@
 <template>
-  <div class="all">
+  <div class="edit">
       <div class="profile-img">
         <img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg">
       </div>
@@ -39,12 +39,7 @@
         </b-autocomplete>
       </b-field>
 
-      <div class="field">
-        <p class="subtitle is-5">Do you want your profile to be seen by others?</p>
-        <b-switch v-model="isSwitchedCustom" true-value="Yes" false-value="No">
-          {{ isSwitchedCustom }}
-        </b-switch>
-      </div>
+  
 
 
 
@@ -121,7 +116,7 @@ export default {
 }
 </script>
 <style scoped>
-.all{
+.edit{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
 }
@@ -139,11 +134,11 @@ export default {
   }
 
   .info{
-    grid-column: 1/13;
+    grid-column: 5/13;
 }
 
   .profile-img {
-    grid-column: 3/5;
+    grid-column: 1/4;
     margin-top: 2rem;
   }
 

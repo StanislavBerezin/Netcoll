@@ -62,7 +62,7 @@
       </div>
 
 
-      <p>{{date}}</p>
+      <p>{{date.getFullYear()}} / {{date.getMonth()+1}} / {{date.getDate()}}</p>
 
 
 

@@ -27,10 +27,7 @@
           
         </b-table-column>
 
-        <b-table-column label="Sold in $">
-        <a class="button is-success is-static color" style="width:100%;">{{ props.row.sold }}</a>
-          
-        </b-table-column>
+
     
 
 

@@ -1,34 +1,36 @@
 <template>
  <div class="all">
-     <h1 class="subtitle is-4">Your sold articles</h1>
+     <h1 class="subtitle is-4">Your current bookings</h1>
 
 
     <b-table :data="isEmpty ? [] : tableDataSimple" :striped="isStriped" :hoverable="isHoverable"
       :loading="isLoading" :mobile-cards="hasMobileCards" class="fix">
 
       <template slot-scope="props">
-        <b-table-column label="ID" >
-          {{ props.row.id }}
+        <b-table-column label="Date" >
+          {{ props.row.date }}
         </b-table-column>
              
 
-        <b-table-column label="Article name">
-          {{ props.row.unit_name }}
+        <b-table-column label="Client">
+          {{ props.row.client_name }}
+        </b-table-column>
+        
+        <b-table-column label="Unit">
+               {{props.row.unit}}
         </b-table-column>
      
- <b-table-column label="Sold copies">
-          {{ props.row.sold }}
+ <b-table-column label="Time">
+          {{ props.row.time }}
         </b-table-column>
-        <b-table-column label="Sold in $">
-        <a class="button is-success is-static color" style="width:100%;">{{ props.row.sold }}$</a>
+        <b-table-column >
+        <a class="button is-success" style="width:100%;">Send a message</a>
           
         </b-table-column>
     
 
 
-        <b-table-column>
-                <a class="button is-info is-rounded">Read</a>
-        </b-table-column>
+        
         
       </template>
 
@@ -46,12 +48,10 @@
     </b-table>
     <div class="sold">
 
-  <b-message title="Default" :closable=close>
-              <h1 class="subtitle is-4">Total sold: {{totalSold}}</h1>
+  <b-message title="Total bookings" :closable=close>
+              <h1 class="subtitle is-4">{{totalSold}}</h1>
         </b-message>
-         <b-message title="Default" :closable=close>
-               <h1 class="subtitle is-4">Total sold: {{totalSoldCash}}</h1>
-        </b-message>
+
 
 
     </div>
@@ -65,40 +65,35 @@
   export default {
    data() {
       const tableDataSimple = [{
-          'id': 'CAB201',
-          'unit_name': 'OOP c#',
-          'students': '125',
-          'new_comments': "2",
-          'sold': "150"
+          'date': '19.01.2018',
+          'client_name': 'Jessica Simpson',
+          'unit': "CAB201",
+          'time': '13.00 - 14.00',
           
         },
         {
-          'id': 'CAB201',
-          'unit_name': 'Business principles',
-          'students': '125',
-          'new_comments': "2",
-          'sold': "150"
+           'date': '19.01.2018',
+          'client_name': 'Jessica Simpson',
+          'unit': "CAB201",
+          'time': '13.00 - 14.00',
         },
         {
-          'id': 'CAB201',
-          'unit_name': 'Microprocessors unit',
-          'students': '125',
-          'new_comments': "2",
-          'sold': "150"
+           'date': '19.01.2018',
+          'client_name': 'Jessica Simpson',
+          'unit': "CAB201",
+          'time': '13.00 - 14.00',
         },
         {
-          'id': 'CAB201',
-          'unit_name': 'Preparation for final exam',
-          'students': '125',
-          'new_comments': "2",
-          'sold': "150"
+           'date': '19.01.2018',
+          'client_name': 'Jessica Simpson',
+          'unit': "CAB201",
+          'time': '13.00 - 14.00',
         },
         {
-          'id': 'CAB201',
-          'unit_name': 'Programming principles',
-          'students': '125',
-          'new_comments': "2",
-          'sold': "150"
+           'date': '19.01.2018',
+          'client_name': 'Jessica Simpson',
+          'unit': "CAB201",
+          'time': '13.00 - 14.00',
         }
       ]
 
