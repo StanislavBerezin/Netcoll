@@ -1,6 +1,6 @@
 <template>
  <div class="all">
-     <h1 class="subtitle is-4">Your created articles</h1>
+     <h1 class="subtitle is-4">Your sold articles</h1>
 
 
     <b-table :data="isEmpty ? [] : tableDataSimple" :striped="isStriped" :hoverable="isHoverable"
@@ -15,19 +15,14 @@
         <b-table-column label="Article name">
           {{ props.row.unit_name }}
         </b-table-column>
-        <b-table-column label="Student #">
-          {{ props.row.students }}
+     
+ <b-table-column label="Sold copies">
+          {{ props.row.sold }}
         </b-table-column>
-
-   
-
-
-<b-table-column label="New comments">
-        <a class="button is-success color is-static"  style="width:100%;">{{ props.row.new_comments }}</a>
+        <b-table-column label="Sold in $">
+        <a class="button is-success is-static color" style="width:100%;">{{ props.row.sold }}$</a>
           
         </b-table-column>
-
-
     
 
 
@@ -49,7 +44,20 @@
         </section>
       </template>
     </b-table>
+    <div class="sold">
 
+  <b-message title="Default" :closable=close>
+              <h1 class="subtitle is-4">Total sold: {{totalSold}}</h1>
+        </b-message>
+         <b-message title="Default" :closable=close>
+               <h1 class="subtitle is-4">Total sold: {{totalSoldCash}}</h1>
+        </b-message>
+
+
+    </div>
+  
+  
+   
  </div>
 </template>
 
@@ -61,7 +69,7 @@
           'unit_name': 'OOP c#',
           'students': '125',
           'new_comments': "2",
-          'sold': "150$"
+          'sold': "150"
           
         },
         {
@@ -69,28 +77,28 @@
           'unit_name': 'Business principles',
           'students': '125',
           'new_comments': "2",
-          'sold': "150$"
+          'sold': "150"
         },
         {
           'id': 'CAB201',
           'unit_name': 'Microprocessors unit',
           'students': '125',
           'new_comments': "2",
-          'sold': "150$"
+          'sold': "150"
         },
         {
           'id': 'CAB201',
           'unit_name': 'Preparation for final exam',
           'students': '125',
           'new_comments': "2",
-          'sold': "150$"
+          'sold': "150"
         },
         {
           'id': 'CAB201',
           'unit_name': 'Programming principles',
           'students': '125',
           'new_comments': "2",
-          'sold': "150$"
+          'sold': "150"
         }
       ]
 
@@ -101,19 +109,13 @@
         isHoverable: true,
         isLoading: false, // will need it when fetch search
         hasMobileCards: true,
-        name: ''
+        name: '',
+        close: false,
+        totalSold: '521',
+        totalSoldCash: '1200$'
       }
     },
-    computed: {
-            filteredDataObj() {
-                return this.tableDataSimple.filter((option) => {
-                    return option.id
-                        .toString()
-                        .toLowerCase()
-                        .indexOf(this.name.toLowerCase()) >= 0
-                })
-            }
-        }
+
   }
   
 
@@ -131,6 +133,12 @@
 
      display: flex;
      flex-direction: column;
+     margin-top:2rem;
+ }
+ .delete{
+     display:none;
+ }
+ .sold{
      margin-top:2rem;
  }
 </style>

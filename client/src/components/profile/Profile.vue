@@ -3,11 +3,11 @@
     <Nav></Nav>
     <div class="grid-wrap">
 
-
+ 
       
       <div class="profile-information" v-if="isGeneral && isOwn">
        <MyGeneral></MyGeneral>
-
+         
       </div>
 
       <div v-if="isGeneral && !isOwn" class="profile-information">
@@ -36,6 +36,7 @@
   import ViewCreator from './creator/ViewCreator.vue'
   import MyCreator from './creator/MyCreator.vue'
   export default {
+
     components: {
       Nav,
       Footer,
