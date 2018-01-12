@@ -59,6 +59,8 @@
         
         But double check it, and think from a user prespective, what thing shoud we add there
         if its all good, then i hope its ok
+    Sidemenu IMPORTANT
+    2) Adding and removing units => will be done through adding units to the array 'units' and removing it from there
 
     /////////////////////////////
     ///////DASHBOARD FINISHED///////////////
@@ -92,13 +94,11 @@
     //////////////////////////////
 
 
-        Sidemenu IMPORTANT
-    1) Adding and removing units => will be done through adding units to the array 'units' and removing it from there
-
+    
 
 
     //ARTICLE (need to work more)
-            CAN BE DONE AT THE later stage{
+            {
 
                 3)share section for facebook to get discounts for further buyings
 
@@ -107,13 +107,7 @@
 
     //Profiles
     REGULAR USER{
-        maybe add facebook profile as a reference
-
-        What can be viewed by others{
-            basic information(done) and facebook profile(will be done later)
-        }
-
-    }
+ 
 
     CONTENT CREATORS{
 
@@ -148,11 +142,22 @@
     }
 
 
+THIGS THAT HAVENT BEEN IMPLEMENTED YET BUT NEEDS TO BE
+    CHAT
+        Need to create a chat component that can be used throughout the entire webapp
+        can setup a simple firebase account and use that as the db for socket.io connection
 
+    
     //Payment methods
     //will need to check if stripe provides their own UI for payment or we can use our own.
     1) Setup the top-up credit modal
     2) widhdraw modal
+
+    
+    THINGS TO THINK
+    1) Need to think of a mobile chat app so that our users can communicate without a laptop
+        Its pretty important
+        
 
 
 
