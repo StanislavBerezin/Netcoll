@@ -19,7 +19,7 @@
           <b-dropdown-item>
             <p>
                 
-                <router-link :to="{name: 'userProfile'}">
+                <router-link :to="{name: 'userProfile', params:{ id: 1}}">
                   <b-icon icon="account"></b-icon>
                     My profile
                 </router-link>

@@ -3,66 +3,56 @@
     <div class="date">
       <h1 class="subtitle is-3">Chose your available days</h1>
       <div class="flex">
-        
-        <b-datepicker
-            inline
-            v-model="date" 
-            :events="events"
-            indicators="bars"
-            >
+
+        <b-datepicker inline v-model="date" :events="events" indicators="bars">
         </b-datepicker>
-   
+
+        <div class="flex-column">
+          <b-field label="Available from">
+            <b-timepicker placeholder="Click to select..." icon="clock" :hour-format="format">
+            </b-timepicker>
+          </b-field>
+          <b-field label="To">
+            <b-timepicker placeholder="Click to select..." icon="clock" :hour-format="format">
+            </b-timepicker>
+          </b-field>
+          <b-field>
+            <b-select placeholder="Duration">
+              <option>$ Per/Hour </option>
+              <option>$ Per Half/hour</option>
+            </b-select>
+            <b-input type="number" placeholder="0,00"></b-input>
+          </b-field>
+          <a class="button is-link">Set  {{date.getDate()}} / {{date.getMonth()+1}} / {{date.getFullYear()}}</a>
 
 
-        <b-table :data="isEmpty ? [] : tableDataSimple" :striped="isStriped" :hoverable="isHoverable" :loading="isLoading" :mobile-cards="hasMobileCards"
-          class="fix">
-
-          <template slot-scope="props">
-            <b-table-column label="Date">
-              {{ props.row.date }}
-            </b-table-column>
-
-
-
-
-
-
-            <b-table-column label="New comments">
-              <a class="button is-success color is-static" style="width:100%;">{{ props.row.new_comments }}</a>
-
-            </b-table-column>
-
-            <b-table-column label="Sold in $">
-              <a class="button is-success is-static color" style="width:100%;">{{ props.row.sold }}</a>
-
-            </b-table-column>
-
-
-
-            <b-table-column>
-              <a class="button is-success is-rounded">Add</a>
-            </b-table-column>
-
-          </template>
-
-          <template slot="empty">
-            <section class="section">
-              <div class="content has-text-grey has-text-centered">
-                <p>
-                  <b-icon icon="emoticon-sad" size="is-large">
-                  </b-icon>
-                </p>
-                <p>Nothing here.</p>
-              </div>
-            </section>
-          </template>
-        </b-table>
+        </div>
 
 
       </div>
+      <div class="bottom">
 
 
-      <p>{{date.getFullYear()}} / {{date.getMonth()+1}} / {{date.getDate()}}</p>
+      
+      <h1 class="subtitle is-3" style="margin-bottom:2rem">Your current tutoring sessions</h1>
+      <b-tabs >
+        <b-tab-item label="All bookings">
+            <TableBookings></TableBookings>
+        </b-tab-item>
+        
+        <b-tab-item label="This week">
+            <TableBookings></TableBookings>
+        </b-tab-item>
+        <b-tab-item label="This month"><
+            <TableBookings></TableBookings></b-tab-item>
+      </b-tabs>
+
+        </div>
+
+
+
+
+
 
 
 
@@ -75,56 +65,19 @@
 <script>
   const thisMonth = new Date().getDate()
 
-
+ import TableBookings from './micro/TableBookings.vue'
   export default {
+  
+ 
 
     data() {
-      const tableDataSimple = [{
-          'date': '19.09.2018',
-          'unit_name': 'OOP c#',
-          'students': '125',
-          'new_comments': "2",
-          'sold': "150$"
-
-        },
-        {
-          'date': '19.09.2018',
-          'unit_name': 'Business principles',
-          'students': '125',
-          'new_comments': "2",
-          'sold': "150$"
-        },
-        {
-          'date': '19.09.2018',
-          'unit_name': 'Microprocessors unit',
-          'students': '125',
-          'new_comments': "2",
-          'sold': "150$"
-        },
-        {
-          'date': '19.09.2018',
-          'unit_name': 'Preparation for final exam',
-          'students': '125',
-          'new_comments': "2",
-          'sold': "150$"
-        },
-        {
-          'date': '19.09.2018',
-          'unit_name': 'Programming principles',
-          'students': '125',
-          'new_comments': "2",
-          'sold': "150$"
-        }
-      ]
-
+   
       return {
-        tableDataSimple,
-        isEmpty: false, //will need it when search is empty
-        isStriped: true,
-        isHoverable: true,
-        isLoading: false, // will need it when fetch search
-        hasMobileCards: true,
-        name: '',
+        
+        
+        formatAmPm: true,
+       
+        
         date: new Date(2017, thisMonth, 1),
         events: [
           new Date(2017, thisMonth, 6),
@@ -137,14 +90,13 @@
       }
     },
     computed: {
-      filteredDataObj() {
-        return this.tableDataSimple.filter((option) => {
-          return option.id
-            .toString()
-            .toLowerCase()
-            .indexOf(this.name.toLowerCase()) >= 0
-        })
+
+      format() {
+        return this.formatAmPm ? '12' : '24'
       }
+    },
+    components:{
+        TableBookings
     }
   }
 
@@ -153,13 +105,18 @@
   .date {
     grid-column: 1/13;
   }
+  .bottom{
+      margin:0 auto;
+  }
 
   .flex {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin: 20px;
+    margin-bottom: 5rem;
+    margin-top: 3rem;
   }
 
   .flex-col {
@@ -169,9 +126,21 @@
     width: 50%;
   }
 
+  .flex-column {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
   .date_picker {
     margin-right: 30px;
     margin-bottom: 20px;
+  }
+
+  .test {
+    color: red !important;
   }
 
 </style>

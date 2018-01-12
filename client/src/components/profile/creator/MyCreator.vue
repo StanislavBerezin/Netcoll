@@ -3,8 +3,7 @@
     <div class="set">
       <router-link tag='a' class="button is-link" :to="{name: 'createdArticles'}">Activity of articles</router-link>
       <router-link tag='a' class="button is-link" :to="{name: 'createArticle'}">Create new article</router-link>
-      <router-link tag='a' class="button is-link" :to="{name: 'setSession'}">Set sessions</router-link>
-       <router-link tag='a' class="button is-link" :to="{name: 'booked'}">Booked sessions</router-link>
+      <router-link tag='a' class="button is-link" :to="{name: 'setSession'}">Private tutoring</router-link>
       <router-link tag='a' class="button is-link" :to="{name: 'editUser'}">Edit personal information</router-link>
       <router-link tag='a' class="button is-link" :to="{name: 'income'}">Revenues</router-link>
 
@@ -21,25 +20,17 @@
 
 </template>
 <script>
-  import SetSessions from './components/SetSessions.vue'
-  import CreatedArticles from './components/CreatedArticles.vue'
-  import CreateArticle from './components/CreateArticle.vue'
-  import Income from './components/Income.vue'
 
-  import Edit from './components/Edit.vue'
+
   export default {
 
     data() {
       return {
-        selectedComponent: ""
+      
       }
     },
     components: {
-      SetSessions,
-      CreatedArticles,
-      CreateArticle,
-      Income,
-      Edit
+   
 
     }
 
@@ -62,7 +53,11 @@
     grid-column: 1/13;
     display: flex;
     flex-wrap: wrap;
+    
     justify-content: space-around;
+  }
+  .set a {
+    flex: 2 1 10%;
   }
 .router-link-active{
   background-color:rgba(141,48,196, 0.7);
