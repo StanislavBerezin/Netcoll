@@ -107,7 +107,9 @@
 
     //Profiles
     REGULAR USER{
- 
+        
+        Regular users should see when they have their sessions set
+
 
     CONTENT CREATORS{
 
