@@ -15,17 +15,12 @@
    </div>
 
         <div class="routes">
-            <router-link :to ="{name: 'bookSession'}"> <a class="button is-mypurple">Book tutorial</a></router-link>
-             <router-link :to ="{name: 'createdArticles'}"> <a class="button is-mypurple">Created articles</a></router-link>
+            <router-link :to ="{name: 'bookSession'}"> <a class="button is-link">Book tutorial</a></router-link>
+             <router-link :to ="{name: 'createdArticles'}"> <a class="button is-link">Created articles</a></router-link>
         </div>
-        <!-- here we go to different routes, one to book session, and another to see created articles -->
-        <!-- the setup of this done in folder called router index.js -->
-        
 
 
-        <!-- this router view shows us different components, to be more precised 
-        it goes into ./components/CreatedArticles or Sessions
-         -->
+
         <router-view class="set-width"></router-view>
 
 </div>
@@ -56,11 +51,11 @@ export default {
     line-height: 3rem;
   }
 
-  /* this is if u want to apply styling to active links */
+  
 .router-link-active{
-    border-bottom: 10px solid red;
-    padding-bottom: 20px;
+  background-color:rgba(141,48,196, 0.7);
 }
+
 .all{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -86,5 +81,7 @@ export default {
   }
   .set-width{
       grid-column: 3/11;
+      display: flex;
+      flex-direction: column;
   }
 </style>
