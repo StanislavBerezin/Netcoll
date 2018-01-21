@@ -119,18 +119,12 @@
                     drowdown inside of table to set pricing
                 }
                 3) Create article{
-                        1)Pro keyboard from vue-awesome
-                        2) Preview should be dynamic
-                        3) Find a way to attach images and videos through text-editor and layout the article
-                        4) If user hasn't bought the article only certain parts should be shown, a content creator choses which ones
+                    4) If user hasn't bought the article only certain parts should be shown, a content creator choses which ones
                 }
             }
 
             If you are VIEWING content creator profile{
-                1) See available times in a form of table{
-                    .1 time availability
-                    .2 price per hour / half an hour
-                    .3 button to book
+                
 
                 }
                 
@@ -165,3 +159,4 @@ THIGS THAT HAVENT BEEN IMPLEMENTED YET BUT NEEDS TO BE
 
 
 */
+

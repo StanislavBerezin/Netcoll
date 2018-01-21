@@ -54,40 +54,40 @@ export default new Router({
       name: 'userProfile',
       component: AsyncRoute('profile/Profile'),
       children: [{
-        //for people viewing the session not for the creator
+          //WHEN REGULAR USERS ENTER THE CREATOR PAGE, THESE 2 are
+          //THE COMPONENTS TO BE DISPLAYED
           path: 'bookings',
-          component: AsyncRoute('profile/creator/components/Sessions'),
+          component: AsyncRoute('profile/creator/components/ViewCreator/Sessions'),
           name: 'bookSession'
         },
         {
-          //also for the people viewing the profile
           path: 'createdArticles',
-          component: AsyncRoute('profile/creator/components/CreatedArticles'),
+          component: AsyncRoute('profile/creator/components/ViewCreator/CreatedArticles'),
           name: 'createdArticles'
         },
 
-        //for the content creator
+        //THESE 4 when you are the content creator and viewing your own page
         {
           path: 'edit',
-          component: AsyncRoute('profile/creator/components/Edit'),
+          component: AsyncRoute('profile/creator/components/MyCreator/Edit'),
           name: 'editUser'
         },
         //for the content creator
         {
           path: 'income',
-          component: AsyncRoute('profile/creator/components/Income'),
+          component: AsyncRoute('profile/creator/components/MyCreator/Income'),
           name: 'income'
         },
         //for the content creator
         {
           path: 'setSession',
-          component: AsyncRoute('profile/creator/components/SetSessions'),
+          component: AsyncRoute('profile/creator/components/MyCreator/SetSessions'),
           name: 'setSession'
         },
         //for the content creator
         {
           path: 'createArticle',
-          component: AsyncRoute('profile/creator/components/CreateArticle'),
+          component: AsyncRoute('profile/creator/components/MyCreator/CreateArticle'),
           name: 'createArticle'
         }
 
