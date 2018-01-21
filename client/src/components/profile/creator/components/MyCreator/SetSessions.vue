@@ -65,7 +65,7 @@
 <script>
   const thisMonth = new Date().getDate()
 
- import TableBookings from './micro/TableBookings.vue'
+ import TableBookings from '../micro/TableBookings.vue'
   export default {
   
  

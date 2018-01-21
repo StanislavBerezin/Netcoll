@@ -1,6 +1,6 @@
 <template>
   <div class="all">
-
+    <!-- WHEN VIEWING CONTENT CREATOR BY other users -->
     <h1 class="subtitle is-4">Book session</h1>
 
 
@@ -77,7 +77,7 @@
 
 </template>
 <script>
-  import BookSession from "./micro/BookSession.vue"
+  import BookSession from "../micro/BookSession.vue"
   export default {
     data() {
       const tableDataSimple = [{

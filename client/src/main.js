@@ -8,11 +8,13 @@ import sync from 'vuex-router-sync'
 import Buefy from 'buefy'
 import mystyle from './mystyle.sass'
 import 'font-awesome/css/font-awesome.min.css'
-
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 
 
 
 Vue.use(Buefy)
+Vue.use(mavonEditor)
 
 
 
