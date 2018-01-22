@@ -5,10 +5,10 @@
 
 
     </ul>
-             <b-tabs type="is-boxed">
+             <b-tabs type="is-boxed fix" expanded ="true">
 
             <b-tab-item label="Search" >
-                    <router-view></router-view>
+                    
                     <keep-alive>
                         <MainSearch></MainSearch>
                     </keep-alive>
@@ -43,6 +43,11 @@ export default {
 }
 </script>
 <style scoped>
-
+.fix ul{
+    width:100px;
+}
+.b-tabs nav{
+    width: -10px;
+}
 
 </style>

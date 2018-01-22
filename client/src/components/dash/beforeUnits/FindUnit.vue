@@ -22,7 +22,7 @@
     
 
         <b-table-column>
-                <a class="button is-success is-rounded">Add unit</a>
+                <a class="button is-mypurple is-rounded">Add unit</a>
         </b-table-column>
       </template>
 
@@ -85,6 +85,9 @@
 <style scoped>
 .button{
     border-radius: 20px;
+}
+.button:hover{
+  opacity: 0.8;
 }
 
 </style>
