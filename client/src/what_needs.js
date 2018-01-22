@@ -3,8 +3,7 @@
     ////////////////////////////////////
     //////////////INTRO PAGE////////////
     ///////////////////////////////////
-    1) Mobile respnsivness for the top menu => should have a dropdown for login, register
-        Currently doesnt work correctly
+
 
     2) Need to add section ('About us')
         Design of your choice
@@ -44,21 +43,6 @@
     ///////DASHBOARD///////////////
     //////////////////////////////
     
-    localhost:8080/dashboard
-    1) Nav bar if it gets less than 850px, the navbar should fold and mobile menu should start working instead
-        {
-            in that navbar, remove logo
-            the rest is the same
-        }
-        
-        The rest is ok on this route, the same for http://localhost:8080/dashboard/unit/CAB202 all good there
-        http://localhost:8080/dashboard/findUnit/s here is also all good,
-        http://localhost:8080/dashboard/purchasedArticles, also seems good
-        http://localhost:8080/dashboard/article/12, also seems to be ok,
-
-        
-        But double check it, and think from a user prespective, what thing shoud we add there
-        if its all good, then i hope its ok
     Sidemenu IMPORTANT
     2) Adding and removing units => will be done through adding units to the array 'units' and removing it from there
 
@@ -73,20 +57,7 @@
     ///////Profile ///////////////
     //////////////////////////////
 
-    at http://localhost:8080/dashboard/profile/1
-
-    check that out and make any comments or anything u think we need to add
-
-    MOST IMPORTANTLY, to toggle bettwen what accounts u view
-    go to folder profile/Profile.vue, theres in data() u can see
-        isGeneral: false,
-        isCreator: true,
-        isOwn: true,
-
-    for example now its set as if you are the cretor and own that page, 
-    if u switch isOwn to false, that would mean that somebody else is viewing the creator
-        maybe that somebody else wants to book a session etc. Check all of them out, and add or comment the things that u think
-    we need to add
+    
 
 
      //////////////////////////////

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="subtitle is-4">Your purchased articles</h1>
+    <h1 class="subtitle is-3" style="margin-top: 1.5rem">Your purchased articles</h1>
     <div class="flex-box">
    
   
@@ -24,9 +24,10 @@
 
     </div>
          
- 
-    <b-dropdown v-model="isSort" class="right">
-        <button class="button is-mypurple" type="button" slot="trigger">
+    <div class="sorting">
+           <p class="right" style=" margin-right:10px; margin-left:0px;">Sort by</p>
+        <b-dropdown v-model="isSort" >
+        <button class="button is-mypurple fix" type="button" slot="trigger">
             <template v-if="isSort">
                 <span>Recent</span>
             </template>
@@ -55,7 +56,9 @@
             </div>
         </b-dropdown-item>
     </b-dropdown>
-    <p class="right" style="margin-top:5px; margin-right:10px;">Sort by</p>
+ 
+    </div>
+    
         
   </div>
 </template>
@@ -118,8 +121,13 @@
 .search{
     margin-top:20px;
 }
-.right{
-    float:right;
-    
+.sorting{
+    display: flex;
+    margin-top:2rem;
 }
+.sorting p{
+    margin-left: 1rem;
+    margin-top:4px;
+}
+
 </style>

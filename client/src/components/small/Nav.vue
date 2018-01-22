@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar">
 
-      <div class="navbar-brand check">
+      <div class="navbar-brand">
         <a class="navbar-item">
                <p>LOGO</p>
             </a>
@@ -26,13 +26,15 @@
           </b-dropdown>
 
 
+        
+
 
         <a class="navbar-item" slot="trigger" @click="isLogin = true">
             <p>Login</p>
 
           </a>
            <b-modal :active.sync="isLogin" has-modal-card>
-            <Login></Login>
+            <Login class="form"></Login>
           </b-modal>
 
 
@@ -42,7 +44,7 @@
           </a>
 
           <b-modal :active.sync="isSignup" has-modal-card>
-            <Register></Register>
+            <Register class="form"></Register>
           </b-modal>
 
         </div>
@@ -149,6 +151,9 @@
       background-color:rgba(52, 152, 219, 0.0);
       border: none;
   }
- 
+ .form{
+     display: flex !important;
+     justify-content: center !important;
+ }
 
 </style>

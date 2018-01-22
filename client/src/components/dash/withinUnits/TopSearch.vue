@@ -23,7 +23,7 @@
     margin-bottom: 20px;">
         <span class="names_drop">Price:</span>
         <b-dropdown v-model="isPrice">
-          <button class="button is-mypurple" type="button" slot="trigger">
+          <button class="button is-mypurple btn" type="button" slot="trigger">
             <template v-if="isPrice">
                 <span>From low to high</span>
             </template>
@@ -59,7 +59,7 @@
         </div>
         <span class="names_drop">Popularity:</span>
         <b-dropdown v-model="isPopular">
-          <button class="button is-mypurple" type="button" slot="trigger">
+          <button class="button is-mypurple btn" type="button" slot="trigger">
             <template v-if="isPopular">
                 <span>From low to high</span>
             </template>
@@ -178,4 +178,8 @@
     color: #fff;
   }
 
+
+.button:hover{
+  opacity: 0.8;
+}
 </style>
