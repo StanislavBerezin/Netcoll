@@ -3,7 +3,7 @@
 
     <form class="register" action="">
 
-      <div class="modal-card" style="width:400px;">
+      <div class="modal-card" >
 
         <header class="modal-card-head">
           <p class="modal-card-title">Sign up</p>
