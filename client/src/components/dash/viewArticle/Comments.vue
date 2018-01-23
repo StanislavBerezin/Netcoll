@@ -76,12 +76,21 @@
   flex-wrap: wrap;
   background-color: rgba(236, 240, 241,1.0);
   border-radius: 20px;
+  
   padding:20px;
   justify-content: space-between;
   margin-bottom:20px;
 }
+.comparision{
+  opacity: 0.3;
+}
 .comparision a{
   margin: 10px;
+  flex: 1 1 100px;
+  opacity: 1 !important;
+}
+.comparision p{
+  opacity: 1 !important;
 }
 
 
