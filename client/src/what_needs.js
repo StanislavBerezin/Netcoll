@@ -4,9 +4,8 @@
     //////////////INTRO PAGE////////////
     ///////////////////////////////////
 
-
-    2) Need to add section ('About us')
-        Design of your choice
+    Most of the things that are needed for intro page are done
+    the rest will be hooked up with DB
 
     3) Functionality to compare passwords on UI
         veeValidate

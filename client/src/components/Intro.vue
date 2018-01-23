@@ -12,7 +12,7 @@
 
 
     </div>
-    <div class="each img-sup">
+    <div class="each img-sup" id="benefits">
       <div class="after_image  row">
 
         <div class="section">
@@ -110,7 +110,7 @@
 
 
 
-    <div class="each">
+    <div class="each" id="works">
 
 
       <div class="row ">
@@ -119,8 +119,8 @@
 
           <h2 class="title is-1 fix">How does it work?</h2>
           <section>
-            <b-tabs position="is-centered" class="block" expanded="true">
-              <b-tab-item label="I am a student wanting to learn">
+            <b-tabs position="is-centered" class="block" expanded>
+              <b-tab-item label="Get an instructor">
 
                 <article class="message is-info">
                   <div class="message-header">
@@ -141,7 +141,7 @@
                     <p>Step 2</p>
                   </div>
                   <div class="message-body">
-                   <img src="https://camo.githubusercontent.com/2b36a13b87ed1c9865d5b50d304d9800fb60ba89/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f637265617469766574696d5f6275636b65742f70726f64756374732f35302f6f726967696e616c2f6f70745f6d645f7468756d626e61696c2e6a7067">
+                    <img src="https://camo.githubusercontent.com/2b36a13b87ed1c9865d5b50d304d9800fb60ba89/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f637265617469766574696d5f6275636b65742f70726f64756374732f35302f6f726967696e616c2f6f70745f6d645f7468756d626e61696c2e6a7067">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
                       quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
                       diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
@@ -203,7 +203,7 @@
               </b-tab-item>
 
 
-              <b-tab-item label="I am a student wanting to help" @click="selectedComponent='Teach'">
+              <b-tab-item label="Become an instructor" @click="selectedComponent='Teach'">
 
 
                 <article class="message is-primary">
@@ -242,7 +242,7 @@
 
                   </div>
                   <div class="message-body">
-                   <img src="https://camo.githubusercontent.com/2b36a13b87ed1c9865d5b50d304d9800fb60ba89/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f637265617469766574696d5f6275636b65742f70726f64756374732f35302f6f726967696e616c2f6f70745f6d645f7468756d626e61696c2e6a7067">
+                    <img src="https://camo.githubusercontent.com/2b36a13b87ed1c9865d5b50d304d9800fb60ba89/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f637265617469766574696d5f6275636b65742f70726f64756374732f35302f6f726967696e616c2f6f70745f6d645f7468756d626e61696c2e6a7067">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
                       quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
                       diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
@@ -257,7 +257,7 @@
 
                   </div>
                   <div class="message-body">
-                   <img src="https://camo.githubusercontent.com/2b36a13b87ed1c9865d5b50d304d9800fb60ba89/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f637265617469766574696d5f6275636b65742f70726f64756374732f35302f6f726967696e616c2f6f70745f6d645f7468756d626e61696c2e6a7067">
+                    <img src="https://camo.githubusercontent.com/2b36a13b87ed1c9865d5b50d304d9800fb60ba89/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f637265617469766574696d5f6275636b65742f70726f64756374732f35302f6f726967696e616c2f6f70745f6d645f7468756d626e61696c2e6a7067">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
                       quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
                       diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
@@ -337,6 +337,7 @@
         isLogin: false,
         isSignup: false,
         isContact: false,
+
         //change props to fit each individually
         formProps: {
           email: 'evan@you.com',
@@ -370,6 +371,41 @@
 
 </script>
 <style lang="css" scoped>
+  .text h1 {
+    color: rgba(236, 240, 241, 1.0);
+    font-weight: 100 !important;
+    font-size: 160%;
+  }
+
+  .text {
+    text-align: center;
+    position: relative;
+    float: left;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    word-spacing: 5px;
+  }
+
+  .main_image {
+    background: radial-gradient(circle farthest-side at right bottom, #fefdfe 5%,
+    rgba(52, 152, 219, 1.0) 25%, rgba(183, 0, 185,1) 70%, rgba(252, 0, 255, 0.8)108% );
+
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+    background-attachment: fixed;
+    display: grid;
+    grid-template-columns: repeat(12);
+  }
+
+
+
   .contact {
     background: #4776E6;
     /* fallback for old browsers */
@@ -406,7 +442,8 @@
   * {
     font-weight: 200;
   }
-/* THE FIRST PINGUIN SECTION  */
+  /* THE FIRST PINGUIN SECTION  */
+
   .img {
     width: 400px;
     width: 300px;
@@ -450,25 +487,26 @@
     min-width: 300px;
     line-height: 10px;
   }
-/* THE FIRST PINGUIN SECTION  FINISHED*/
+  /* THE FIRST PINGUIN SECTION  FINISHED*/
+  /* HOW IT WORKS SECTION  */
 
-/* HOW IT WORKS SECTION  */
-.message-body img{
-    width:400px;
-    height:300px;
-}
-.message-body p{
-    width:300px;
-}
-.message-body{
+  .message-body img {
+    width: 400px;
+    height: 300px;
+  }
+
+  .message-body p {
+    width: 300px;
+  }
+
+  .message-body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-    
-}
+  }
+  /* HOW IT WORKS SECTION FINISHED*/
 
-/* HOW IT WORKS SECTION FINISHED*/
   h2::after {
     display: block;
     height: 2px;
@@ -500,17 +538,6 @@
   }
   /*good here */
 
-  .text {
-    text-align: center;
-    position: relative;
-    float: left;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    word-spacing: 5px;
-  }
-
-
   .line {
     width: 30%;
     margin: 0 auto;
@@ -520,30 +547,7 @@
     background-color: rgba(236, 240, 241, 1.0);
   }
 
-  .text h1 {
-    color: rgba(236, 240, 241, 1.0);
 
-
-    margin-top: 15%;
-    font-weight: 100 !important;
-    font-size: 160%;
-  }
-
-  .main_image {
-    background: #fc00ff;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, rgba(52, 152, 219, 1.0), #b700b9);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, rgba(52, 152, 219, 1.0), #b700b9);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    /* Chrome 10-25, Safari 5.1-6 */
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-
-    background-attachment: fixed;
-  }
 
   @media screen and (max-width: 768px) {}
 

@@ -4,11 +4,12 @@
 
       <div class="navbar-brand">
         <a class="navbar-item">
-               <p>LOGO</p>
-            </a>
+          <p>LOGO</p>
+        </a>
 
 
-        <button class="button navbar-burger burg" @click="makeBurger"  v-bind:class="{ 'is-active': activator }" aria-haspopup="true" aria-controls="dropdown-menu">
+        <button class="button navbar-burger burg" @click="makeBurger" v-bind:class="{ 'is-active': activator }" aria-haspopup="true"
+          aria-controls="dropdown-menu">
             <span></span>
             <span></span>
             <span></span>
@@ -20,28 +21,50 @@
       <div class="navbar-menu mobile" v-bind:class="{ 'is-active': activator }">
 
         <div class="navbar-end">
-          <b-dropdown position="is-bottom-left">
+          <a class="navbar-item" slot="trigger" v-scroll-to="{
+                                                        el: '#benefits',
+                                                        offset: -113,
+                                                      }">
+                        <span>Benefits</span>
+                    
+        </a>
 
         
+          <a class="navbar-item" v-scroll-to="{
+                                                el: '#works',
+                                                offset: -80,
+                                              }" slot="trigger">
+                        <span>How it works</span>
+                    
+        </a>
+
+
+
+          <b-dropdown class="navbar-item">
+            <button class="button is-primary" style=" border-radius:20px;" slot="trigger">
+                <span>Go to dashboard</span>
+            </button>
+
+            <b-dropdown-item>
+              <p @click="isLogin = true">Login</p>
+            </b-dropdown-item>
+            <b-dropdown-item>
+              <p @click="isSignup = true">Sign up</p>
+            </b-dropdown-item>
+
           </b-dropdown>
 
 
-        
 
 
-        <a class="navbar-item" slot="trigger" @click="isLogin = true">
-            <p>Login</p>
 
-          </a>
-           <b-modal :active.sync="isLogin" has-modal-card>
+
+          <b-modal :active.sync="isLogin" has-modal-card>
             <Login class="form"></Login>
           </b-modal>
 
 
-          <a class="navbar-item" slot="trigger" @click="isSignup = true">
-            <p>Sign up</p>
 
-          </a>
 
           <b-modal :active.sync="isSignup" has-modal-card>
             <Register class="form"></Register>
@@ -66,7 +89,7 @@
         msg: '',
         activator: false,
         isSignup: false,
-        isLogin:false,
+        isLogin: false,
         user: {
           password: '',
           email: ''
@@ -121,11 +144,13 @@
 </script>
 <style lang="css" scoped>
   .navbar {
-    padding:15px;
-    position:fixed;
-    width:100%;
+    padding: 15px;
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    position: fixed;
+    width: 100%;
     z-index: 1;
-    background: linear-gradient(to left, rgba(183, 0, 185, 0.7), rgba(52, 152, 219, 0.7));
+    background: linear-gradient(to left, rgba(52, 152, 219, 0.7), rgba(183, 0, 185, 0.7));
 
     -webkit-box-shadow: 0 6px 10px -6px rgba(32, 156, 238, 0.7);
     -moz-box-shadow: 0 6px 10px -6px rgba(32, 156, 238, 0.7);
@@ -134,26 +159,30 @@
   }
 
   @media screen and (max-width: 768px) {
-   
-    .mobile p, button{
-        color:#fff !important;
+
+    .mobile button,
+    span {
+      color: #fff !important;
     }
-  
-    .mobile{
-          background-color: rgba(32, 156, 238, 0.0);
-          box-shadow: none;
+
+    .mobile {
+      background-color: rgba(32, 156, 238, 0.0);
+      box-shadow: none;
     }
-     button:focus:not(:active), .button.is-focused:not(:active) {
-    box-shadow: none !important;    
+    button:focus:not(:active),
+    .button.is-focused:not(:active) {
+      box-shadow: none !important;
+    }
   }
+
+  .burg {
+    background-color: rgba(52, 152, 219, 0.0);
+    border: none;
   }
-  .burg{
-      background-color:rgba(52, 152, 219, 0.0);
-      border: none;
+
+  .form {
+    display: flex !important;
+    justify-content: center !important;
   }
- .form{
-     display: flex !important;
-     justify-content: center !important;
- }
 
 </style>
