@@ -1,6 +1,6 @@
 <template>
   <div>
-    
+
     <div class="main_image">
       <Nav></Nav>
       <div class="text">
@@ -12,7 +12,7 @@
 
 
     </div>
-    <div class="each">
+    <div class="each img-sup">
       <div class="after_image  row">
 
         <div class="section">
@@ -22,56 +22,94 @@
           </p>
         </div>
 
-        <div class="columns">
+        <div class="vectors">
 
-          <div class="column">
-
-            <h3 class="subtitle is-5">Join community</h3>
-            <b-icon icon="account-multiple-outline" class="test" size="is-large"></b-icon>
-            <p class="subtitle is-6">
-              Meet like minded people and make friends to help you with your studies. Discuss the topics that need more explanation and
-              collaborate with others.
-            </p>
-          </div>
-
-          <div class="column">
-            <h3 class="subtitle is-5">Quick access</h3>
-            <b-icon icon="clock" class="test" size="is-large">
+          <div class="column-flex">
+            <div class="img">
+              <img src="https://thumbs.dreamstime.com/b/cartoon-penguin-eating-fish-flat-vector-isolated-white-background-illustration-81262287.jpg">
+            </div>
+            <div class="text-img">
+              <h3 class="subtitle is-4 fix-weight">Join community</h3>
+              <p class="subtitle is-5">
+                Meet like minded people and make friends to help you with your studies. Discuss the topics that need more explanation and
+                collaborate with others.
+              </p>
 
 
-            </b-icon>
-            <p class="subtitle is-6">
-              You can quickly access the topics that can help you to understand the material from your university. Explained and delivered
-              by your classmates.
-            </p>
-          </div>
+            </div>
 
-          <div class="column">
-
-
-            <h3 class="subtitle is-5">Personal assistance</h3>
-            <b-icon icon="account-outline" class="test" size="is-large"></b-icon>
-            <p class="subtitle is-6">
-              Get your personal tutor at your own university to help you with your assignments and studies. Or become a tutor and make
-              money by helping others.
-            </p>
           </div>
 
 
-          <div class="column">
 
 
-            <h3 class="subtitle is-5">Share knowledge</h3>
-            <b-icon icon="message-text-outline" class="test" size="is-large"></b-icon>
-            <p class="subtitle is-6">
-              Create an article and share your knowledge and understanding with your classmates and make some money while studying at university.
-            </p>
+
+
+
+
+
+
+
+
+          <div class="column-flex">
+
+            <div class="text-img">
+              <h3 class="subtitle is-4 fix-weight">Quick access</h3>
+              <p class="subtitle is-5">
+                You can quickly access the topics that can help you to understand the material from your university. Explained and delivered
+                by your classmates.
+              </p>
+
+            </div>
+            <div class="img">
+              <img src="https://thumbs.dreamstime.com/b/penguin-vector-silhouette-8109184.jpg">
+            </div>
+
           </div>
+
+          <div class="column-flex">
+            <div class="img">
+              <img src="https://thumbs.dreamstime.com/b/baby-penguin-vector-cute-illustration-flat-white-background-77507515.jpg">
+            </div>
+            <div class="text-img">
+              <h3 class="subtitle is-4 fix-weight">Personal assistance</h3>
+              <p class="subtitle is-5">
+                Get your personal tutor at your own university to help you with your assignments and studies. Or become a tutor and make
+                money by helping others.
+              </p>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="column-flex">
+
+            <div class="text-img">
+              <h3 class="subtitle is-4 fix-weight">Share knowledge</h3>
+              <p class="subtitle is-5">
+                Create an article and share your knowledge and understanding with your classmates and make some money while studying at university.
+              </p>
+
+            </div>
+            <div class="img">
+              <img src="https://cdn.tutsplus.com/vector/uploads/legacy/freebies/vector_illustrations/023_penguin/penguin-600.jpg">
+            </div>
+
+          </div>
+
+
+
 
         </div>
 
       </div>
     </div>
+
+
+
+
     <div class="each">
 
 
@@ -81,7 +119,7 @@
 
           <h2 class="title is-1 fix">How does it work?</h2>
           <section>
-            <b-tabs position="is-centered" class="block">
+            <b-tabs position="is-centered" class="block" expanded="true">
               <b-tab-item label="I am a student wanting to learn">
 
                 <article class="message is-info">
@@ -89,6 +127,7 @@
                     <p>Step 1</p>
                   </div>
                   <div class="message-body">
+                    <img src="https://camo.githubusercontent.com/2b36a13b87ed1c9865d5b50d304d9800fb60ba89/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f637265617469766574696d5f6275636b65742f70726f64756374732f35302f6f726967696e616c2f6f70745f6d645f7468756d626e61696c2e6a7067">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
                       quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
                       diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
@@ -102,6 +141,7 @@
                     <p>Step 2</p>
                   </div>
                   <div class="message-body">
+                   <img src="https://camo.githubusercontent.com/2b36a13b87ed1c9865d5b50d304d9800fb60ba89/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f637265617469766574696d5f6275636b65742f70726f64756374732f35302f6f726967696e616c2f6f70745f6d645f7468756d626e61696c2e6a7067">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
                       quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
                       diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
@@ -115,6 +155,7 @@
                     <p>Step 3</p>
                   </div>
                   <div class="message-body">
+                    <img src="https://camo.githubusercontent.com/2b36a13b87ed1c9865d5b50d304d9800fb60ba89/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f637265617469766574696d5f6275636b65742f70726f64756374732f35302f6f726967696e616c2f6f70745f6d645f7468756d626e61696c2e6a7067">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
                       quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
                       diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
@@ -171,6 +212,7 @@
 
                   </div>
                   <div class="message-body">
+                    <img src="https://camo.githubusercontent.com/2b36a13b87ed1c9865d5b50d304d9800fb60ba89/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f637265617469766574696d5f6275636b65742f70726f64756374732f35302f6f726967696e616c2f6f70745f6d645f7468756d626e61696c2e6a7067">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
                       quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
                       diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
@@ -185,6 +227,7 @@
 
                   </div>
                   <div class="message-body">
+                    <img src="https://camo.githubusercontent.com/2b36a13b87ed1c9865d5b50d304d9800fb60ba89/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f637265617469766574696d5f6275636b65742f70726f64756374732f35302f6f726967696e616c2f6f70745f6d645f7468756d626e61696c2e6a7067">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
                       quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
                       diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
@@ -199,6 +242,7 @@
 
                   </div>
                   <div class="message-body">
+                   <img src="https://camo.githubusercontent.com/2b36a13b87ed1c9865d5b50d304d9800fb60ba89/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f637265617469766574696d5f6275636b65742f70726f64756374732f35302f6f726967696e616c2f6f70745f6d645f7468756d626e61696c2e6a7067">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
                       quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
                       diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
@@ -213,6 +257,7 @@
 
                   </div>
                   <div class="message-body">
+                   <img src="https://camo.githubusercontent.com/2b36a13b87ed1c9865d5b50d304d9800fb60ba89/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f637265617469766574696d5f6275636b65742f70726f64756374732f35302f6f726967696e616c2f6f70745f6d645f7468756d626e61696c2e6a7067">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
                       quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
                       diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
@@ -309,7 +354,7 @@
 
     },
     methods: {
-     async signUp() {
+      async signUp() {
         await Auth.registerUser({
 
           email: "here",
@@ -361,8 +406,17 @@
   * {
     font-weight: 200;
   }
+/* THE FIRST PINGUIN SECTION  */
+  .img {
+    width: 400px;
+    width: 300px;
+  }
 
 
+  .fix-weight {
+    font-weight: 400;
+    color: rgba(52, 152, 219, 1.0);
+  }
 
   .section {
     margin-bottom: 35px;
@@ -374,19 +428,52 @@
     margin-bottom: 80px;
   }
 
-  .column h3,
-  p {
-    font-weight: 100;
+  .vecotrs {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 
-  .column p {
-    line-height: 30px;
+  .column-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    ;
+    flex-wrap: wrap;
   }
 
+  .text-img {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 300px;
+    line-height: 10px;
+  }
+/* THE FIRST PINGUIN SECTION  FINISHED*/
+
+/* HOW IT WORKS SECTION  */
+.message-body img{
+    width:400px;
+    height:300px;
+}
+.message-body p{
+    width:300px;
+}
+.message-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
+
+/* HOW IT WORKS SECTION FINISHED*/
   h2::after {
     display: block;
     height: 2px;
-    background-color: rgba(52, 152, 219, 1.0);;
+    background-color: rgba(52, 152, 219, 1.0);
+    ;
     content: " ";
     width: 15rem;
     margin: 0 auto;
@@ -396,7 +483,8 @@
   .fix::after {
     display: block;
     height: 2px;
-    background-color: rgba(52, 152, 219, 1.0);;
+    background-color: rgba(52, 152, 219, 1.0);
+    ;
     content: " ";
     width: 15rem;
     margin: 0 auto;
@@ -405,7 +493,8 @@
 
 
   .test {
-    color: rgba(52, 152, 219, 1.0);;
+    color: rgba(52, 152, 219, 1.0);
+    ;
     margin-top: -10px;
     margin-bottom: 10px;
   }

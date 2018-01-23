@@ -32,7 +32,7 @@
        
     </section>
  
-    <Footer class="footer"></Footer>
+    <Footer class="footers"></Footer>
 </div>
   
 </template>
@@ -74,7 +74,7 @@ export default {
     grid-template-columns: repeat(24, 1fr)
 }
 
-.navigation, .footer{
+.navigation, .footers{
     grid-column: 1/25;
 }
 .sidemenu{
@@ -87,5 +87,6 @@ export default {
     margin-left: 50px;
     margin-top:30px;
 }
+
 
 </style>

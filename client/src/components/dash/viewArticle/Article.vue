@@ -91,7 +91,7 @@
   }
 
   .article {
-    grid-column: 5/20;
+    grid-column: 5/21;
     margin-top: 3rem;
     text-align: center;
   }

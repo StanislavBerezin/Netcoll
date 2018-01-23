@@ -11,14 +11,8 @@
     3) Functionality to compare passwords on UI
         veeValidate
 
-    4) Footer
-        Need to add some stuff there
-
-    5) Section SIMPLER AND QUICKER SUPPORT THAT IS NEEDED
-        Dont worry about it at the moment, as its planned out to put vector images after
 
 
-    5) Make "how it works" section tabs smaller rather than 100% width, maybe add some cool icons
        
     6) Responses that we recieve from server when something is wrong should be displayed as "toast with error"
         recieved from server, the same for success (not really needed but would be cool)
@@ -27,13 +21,6 @@
     7) Add a 404 page
        Design of your choice
 
-    8) Registration form data validation:
-        a) Don't validate username field until the user has entered something (currently validates on load)
-        b) Implement password mismatch validation
-        c) Keep a list of university options, validate input based on known list of universities. Don't let the enter an unknown uni.
-        d) Don't make the registration form disapppear when you click away from it; only when you click the x to close it
-    
-    9) Add titles to HTML pages
     ////////////////////////////////////
     //////////////INTRO FINISHED////////////
     ///////////////////////////////////
