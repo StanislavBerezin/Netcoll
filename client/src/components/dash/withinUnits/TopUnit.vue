@@ -58,13 +58,14 @@
     </b-dropdown>
  
     </div>
-    
         
   </div>
 </template>
 
 <script>
+import {mapActions} from 'vuex'
   export default {
+    
       data(){
           return{
               isSort: true,
@@ -88,10 +89,15 @@
           }
       },
     methods: {
+    ...mapActions(['removeUnit']),
       confirm() {
         this.$dialog.confirm({
           message: 'Please confirm that you have finished the unit',
-          onConfirm: () => this.$toast.open('Unit is finished')
+          onConfirm: () => {
+              this.$store.dispatch('removeUnit', this.$route.params.unitCode )
+              this.$router.push({name: "Dashboard"})
+              this.$toast.open('Unit is finished')
+              }
         })
       }
     },

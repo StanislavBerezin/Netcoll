@@ -1,7 +1,7 @@
 <template>
   <div>
     <aside class="menu">
-      <p class="menu-label">
+      <p class="menu-label" >
         Search for your units
       </p>
       <ul class="menu-list">
@@ -18,23 +18,26 @@
 
         </li>
       </ul>
-      <p class="menu-label">
+      <p class="menu-label" style="margin-bottom:-0px;">
         Your curent units
       </p>
 
       <ul class="menu-list">
 
-        <router-link v-for="route in units" tag='li' :to='{name:"Unit", params:{unitCode: route } }' :key="route">
+        <router-link v-for="route in getUnits" tag='li' :to='{name:"Unit", params:{unitCode: route } }' :key="route">
 
           <a>{{route}}</a>
         </router-link>
       </ul>
 
-      <p class="menu-label">
-        Articles
+      <p class="menu-label" style="margin-bottom:-0px;">
+        Extra
       </p>
+      
       <ul class="menu-list">
+        
         <li><a>Following</a></li>
+        <li><a>Finished units</a></li>
         <router-link :to="{name: 'purchasedArticles'}" tag='li'><a>Purchased articles</a></router-link>
       </ul>
     </aside>
@@ -45,33 +48,33 @@
 
 </template>
 <script>
+import {mapGetters} from 'vuex'
+
   export default {
     data() {
       return {
-        units: {
-          unitCode1: "CAB202",
-          unitCode2: "CAB203",
-          unitCode3: "CAB204",
-          unitCode4: "IAB330",
-        },
-        unitCode1: "CAB202",
-        unitCode2: "CAB203",
-        unitCode3: "CAB204",
-        unitCode4: "IAB330",
         isActive: false,
+        new:'',
         selected: undefined,
 
         unitSearch: "s"
       }
     },
     methods: {
+ 
+
       selectComponent() {
 
 
-        console.log(this.$route)
+        console.log(this.$store.getters.getUnits)
 
       },
-    }
+
+    },
+    computed: {
+        ...mapGetters(['getUnits'])
+      }
+    
 
   }
 

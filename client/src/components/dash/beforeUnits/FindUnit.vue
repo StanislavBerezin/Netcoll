@@ -22,7 +22,7 @@
     
 
         <b-table-column>
-                <a class="button is-mypurple is-rounded">Add unit</a>
+                <a class="button is-mypurple is-rounded" @click="addUnit(props.row.id)">Add unit</a>
         </b-table-column>
       </template>
 
@@ -41,6 +41,7 @@
   </div>
 </template>
 <script>
+import {mapActions} from 'vuex'
   export default {
     data() {
       const tableDataSimple = [{
@@ -49,12 +50,12 @@
           'last_name': '125',
         },
         {
-          'id': 'CAB201',
+          'id': 'CAB20122',
           'first_name': 'Programming principles',
           'last_name': '125',
         },
         {
-          'id': 'CAB201',
+          'id': 'CAB202131',
           'first_name': 'Programming principles',
           'last_name': '125',
         },
@@ -78,6 +79,10 @@
         isLoading: false, // will need it when fetch search
         hasMobileCards: true
       }
+    },
+    methods:{
+      ...mapActions(['addUnit']),
+   
     }
   }
 
