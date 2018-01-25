@@ -26,7 +26,7 @@
           <p>Degree: Computer science</p>
             
         </div>
-        <a class="button is-info is-large">Book tutorial session</a>
+        <router-link class="button is-info is-large" :to="{name:'userProfile', params:{ id: 1}}" tag='a'>Book tutorial session</router-link>
 
       </div>
       <div class="comments" style="margin-top:2rem;">
@@ -45,7 +45,7 @@
 
 
 
-    <Footer class="footer"></Footer>
+    <Footer class="footers"></Footer>
   </div>
 
 </template>
@@ -86,7 +86,7 @@
     grid-column: 1/25;
   }
 
-  .footer {
+  .footers {
     grid-column: 1/25;
   }
 

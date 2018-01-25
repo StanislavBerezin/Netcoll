@@ -5,7 +5,7 @@
 
 
     </ul>
-             <b-tabs type="is-boxed fix" expanded ="true">
+             <b-tabs type="is-boxed fix" expanded>
 
             <b-tab-item label="Search" >
                     

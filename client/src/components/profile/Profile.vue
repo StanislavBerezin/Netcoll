@@ -52,7 +52,7 @@
         //if isOwn false and is General, means you are not the owner of the page but can still view it
         isGeneral: false,
         isCreator: true,
-        isOwn: false,
+        isOwn: true,
 
         
     }

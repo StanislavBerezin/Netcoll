@@ -3,20 +3,20 @@
     <div class="selected">
 
       <div class="comparision">
-        <a class="button is-dark is-outlined" @click="selectedComponent='All'" 
+        <a class="button is-dark " @click="selectedComponent='All'" 
         :class ="{active: isActive}">
         <b-icon icon="comment-text-outline"></b-icon> <p>All: 6</p></a>
 
-        <a class="button is-success is-outlined" @click="selectedComponent='Positive'" 
+        <a class="button is-success " @click="selectedComponent='Positive'" 
         :class ="{active: isActive}">
 
        <b-icon icon="comment-plus-outline" class="pos"></b-icon> <p>Positive: 3</p> </a>
 
 
-        <a class="button is-outlined" @click="selectedComponent='Neutral'" 
+        <a class="button " @click="selectedComponent='Neutral'" 
         :class ="{active: isActive1}">
        <b-icon icon="comment-outline"></b-icon>  <p> Neutral: 2</p> </a>
-      <a class="button is-danger is-outlined" @click="selectedComponent='Negative'" 
+      <a class="button is-danger " @click="selectedComponent='Negative'" 
         :class ="{active: isActive2}">
        <b-icon icon="comment-remove-outline" class="neg"></b-icon>   <p> Negative: 1</p> </a>
 
@@ -82,7 +82,7 @@
   margin-bottom:20px;
 }
 .comparision{
-  opacity: 0.3;
+  
 }
 .comparision a{
   margin: 10px;

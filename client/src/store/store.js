@@ -14,9 +14,8 @@ export default new Vuex.Store({
             username: null,
             university: null,
             email: null,
-            units:[
-                
-            ],
+            units:["CAB202", "CAB203", "CAB204", "IAB330"]
+            ,
             purchasedArticles:[],
             following:[],
             credit: null,
@@ -26,6 +25,9 @@ export default new Vuex.Store({
 
     //to get data
     getters:{
+        getUnits(state){
+            return state.user.units
+        }
 
     },
 
@@ -45,6 +47,19 @@ export default new Vuex.Store({
         },
         setLog(state, log){
             state.user.isLogged = log
+        },
+
+
+
+        addUnit(state, unitId){
+            state.user.units.push(unitId)
+        },
+        removeUnit(state, unitId){
+             var index = state.user.units.indexOf(unitId)
+             if (index > -1) {
+                state.user.units.splice(index, 1);
+            }
+            
         }
 
     },
@@ -65,7 +80,15 @@ export default new Vuex.Store({
         },
         setLog({commit}, log){
             commit('setLog', log)
+        },
+
+        addUnit({commit}, unitId){
+            commit('addUnit', unitId)
+        },
+        removeUnit({commit}, unitId){
+            commit('removeUnit', unitId)
         }
+        
 
 
     }
