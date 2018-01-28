@@ -3,7 +3,7 @@
 
     <form class="register" action="">
 
-      <div class="modal-card" >
+      <div class="modal-card">
 
         <header class="modal-card-head">
           <p class="modal-card-title">Sign up</p>
@@ -16,7 +16,9 @@
             <b-input type="email" placeholder="Your email" v-model="user.email" required>
             </b-input>
           </b-field>
+
           <b-field label="Your username" :type="form.username.icon" :message="form.username.message">
+
             <b-input v-model="user.username" placeholder="Your username" maxlength="10" required>
             </b-input>
           </b-field>
@@ -43,6 +45,7 @@
         <footer class="modal-card-foot">
 
           <button class="button is-primary" @click.prevent="signUp">Register</button>
+
         </footer>
 
 
@@ -78,34 +81,55 @@
 
       }
     },
+
     methods: {
       async signUp() {
-        try{
+
+
+        try {
 
           const userData = await Auth.registerUser(this.user)
           
-              this.$store.dispatch('setToken', userData.data.user.tokens[0].token)
-              this.$store.dispatch('setExtra', userData.data.extraToken)
-              this.$store.dispatch('setUni', userData.data.user.university)
-              this.$store.dispatch('setUsername', userData.data.user.username)
-              this.$store.dispatch('setLog', true)
+          this.$store.dispatch('logUser', userData.data.user)
+          this.$store.dispatch('extraToken', userData.data.extraToken)
 
-          console.log(userData.data.user.tokens[0].token)
-          console.log(userData.data.extraToken)
-          console.log(userData.data.user.username)
-          console.log(userData.data.user.university)
+          this.$localStorage.set('extraToken', userData.data.extraToken)
+          this.$localStorage.set('userToken', userData.data.user.tokens[0].token)
 
-        }catch(err){
-          console.log(err)
+          let that = this
+
+
+
+          const loadingComponent = this.$loading.open()
+          setTimeout(() => loadingComponent.close(), 2 * 1000)
+
+          setTimeout(function () {
+            that.$router.push({
+              name: 'Dashboard'
+            })
+          }, 2000);
+
+
+
+          console.log(userData.data.user)
+
+
+        } catch (err) {
+          this.$toast.open({
+            duration: 5000,
+            message: `Wrong details`,
+            position: 'is-top',
+            type: 'is-danger'
+          })
         }
+
+
+
+
+
         
+      },
 
-
-
-        
-        const loadingComponent = this.$loading.open()
-        setTimeout(() => loadingComponent.close(), 2 * 1000)
-      }
     }
 
   }

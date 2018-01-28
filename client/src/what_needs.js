@@ -4,53 +4,48 @@
     //////////////INTRO PAGE////////////
     ///////////////////////////////////
 
-    Most of the things that are needed for intro page are done
-    the rest will be hooked up with DB
 
-    3) Functionality to compare passwords on UI
+    1) Functionality to compare passwords on UI
         veeValidate
-
-
-
        
-    6) Responses that we recieve from server when something is wrong should be displayed as "toast with error"
+    2) Responses that we recieve from server when something is wrong should be displayed as "toast with error"
         recieved from server, the same for success (not really needed but would be cool)
         Not really needed but would be cool
 
-    7) Add a 404 page
+    3) Add a 404 page
        Design of your choice
 
-    ////////////////////////////////////
-    //////////////INTRO FINISHED////////////
-    ///////////////////////////////////
+    4) Hook up login and registration (back/front)
+
+    //HOOOK UP///
+
+    1) Need to have interceptor sending tokens back and forth for each request
+    2) protected routes
+
+    dashboard{
+
+        1)when logged in or registered => route should be protected
+        
+            2) The backend should respond for the dashboard view, containing
+                (list of units, credit, University)
+
+            3)When searching for the unit, should check and show all units available in DB
+            , if unit is not there, allow a student to make 1. Response send to UI
+            
+            4) Finished Units = > send request to server with auth, to see what units
+            are finished for that user = > Same for purchased articles, Following
+
+           UNITS {
+               1) send a request to server, based on route params and search for the units articles
+                
+           }
+    }
+
+
+    ///HOOK UP///
+
 
     
-    //////////////////////////////
-    ///////DASHBOARD///////////////
-    //////////////////////////////
-    
-   
-    /////////////////////////////
-    ///////DASHBOARD FINISHED///////////////
-    //////////////////////////////
-    
-
-
-
-     //////////////////////////////
-    ///////Profile ///////////////
-    //////////////////////////////
-
-    
-
-
-     //////////////////////////////
-    ///////Profile done///////////////
-    //////////////////////////////
-
-
-    
-
 
     //Profiles
     REGULAR USER{
@@ -62,8 +57,8 @@
 
             If you are the content creator{
                 1) Set booking times{
-                    need to make it more dynamic with a better table
-                    drowdown inside of table to set pricing
+                   1) need to record the date, and once saved should apply to the calendar
+                    2) The table should get the data 
                 }
                 3) Create article{
                     4) If user hasn't bought the article only certain parts should be shown, a content creator choses which ones

@@ -1,16 +1,16 @@
 <template>
   <div>
 
-    <form  class = "login"action="">
+    <form class="login" action="">
 
-      <div class="modal-card" >
- <header class="modal-card-head">
-      <p class="modal-card-title">Login</p>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Login</p>
 
-    </header>
+        </header>
         <section class="modal-card-body">
 
-        <b-field label="Your email">
+          <b-field label="Your email">
             <b-input type="email" placeholder="Your email" v-model="user.email" required>
             </b-input>
           </b-field>
@@ -19,14 +19,14 @@
             <b-input type="password" v-model="user.password" password-reveal placeholder="Your password" required>
             </b-input>
           </b-field>
-          
+
 
           <b-checkbox>Remember me</b-checkbox>
 
         </section>
 
         <footer class="modal-card-foot">
-          <button class="button is-primary" @click.prevent = "logUser">Login</button>
+          <button class="button is-primary" @click.prevent="logUser">Login</button>
         </footer>
       </div>
 
@@ -39,12 +39,12 @@
   import Auth from '../../connection/Auth.js'
 
   export default {
-    data(){
-      return{
-        user:{
+    data() {
+      return {
+        user: {
           email: "",
           password: ""
-          
+
         }
       }
     },
@@ -52,37 +52,50 @@
     methods: {
       async logUser() {
 
-        try{
+
+        try {
 
           const userData = await Auth.loginUser(this.user)
+          this.$store.dispatch('logUser', userData.data.user)
+          this.$store.dispatch('extraToken', userData.data.extraToken)
+
+          let that = this
+
+
+
+          const loadingComponent = this.$loading.open()
+
+          this.$localStorage.set('extraToken', userData.data.extraToken)
+          this.$localStorage.set('userToken', userData.data.user.tokens[0].token)
           
-              this.$store.dispatch('setToken', userData.data.user.tokens[0].token)
-              this.$store.dispatch('setExtra', userData.data.extraToken)
-              this.$store.dispatch('setUni', userData.data.user.university)
-              this.$store.dispatch('setUsername', userData.data.user.username)
-              this.$store.dispatch('setLog', true)
+          setTimeout(() => loadingComponent.close(), 2 * 1000)
 
-        }catch(err){
-          console.log(err)
+          setTimeout(function () {
+            that.$router.push({
+              name: 'Dashboard'
+            })
+          }, 2000);
+
+
+
+        } catch (err) {
+          this.$toast.open({
+            duration: 5000,
+            message: `Wrong details`,
+            position: 'is-top',
+            type: 'is-danger'
+          })
         }
-        
-
-
-
-        
-        const loadingComponent = this.$loading.open()
-        setTimeout(() => loadingComponent.close(), 2 * 1000)
       }
-    }
 
+    }
   }
 
 </script>
 
 <style scoped>
-.login{
+  .login {
     text-align: left;
-}
-
+  }
 
 </style>

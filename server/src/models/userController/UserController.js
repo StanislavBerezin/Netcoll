@@ -30,6 +30,7 @@ userSchema.methods.generateAuthToken = function(){
     });
 },
 
+
 //comparing passwords
 userSchema.methods.comparePassword = function(password){
     let user = this;
