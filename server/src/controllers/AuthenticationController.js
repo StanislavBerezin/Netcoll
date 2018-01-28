@@ -80,7 +80,7 @@ module.exports = {
             user.save()
             //right after we saved it, we generation the token
                 .then(() => {
-
+                   
                     return user.generateAuthToken(req)
 
                 })
@@ -89,7 +89,7 @@ module.exports = {
 
                     //using function sendData we chose what data to send
                     res.send({
-                        user: sendData(user, 'username', 'university', 'tokens'),
+                        user: sendData(user, 'username', 'university', 'tokens', 'extraToken'),
                         extraToken: generateToken(req)
                     })
                 })

@@ -316,6 +316,7 @@
       </b-modal>
     </div>
 
+
     <Footer></Footer>
 
   </div>
@@ -333,6 +334,7 @@
   export default {
     data() {
       return {
+        
         logo,
         isLogin: false,
         isSignup: false,
@@ -346,6 +348,7 @@
 
       }
     },
+   
     components: {
       Nav,
       Footer,
@@ -355,13 +358,8 @@
 
     },
     methods: {
-      async signUp() {
-        await Auth.registerUser({
-
-          email: "here",
-          name: "another"
-
-        })
+      signUp() {
+      
       }
     },
     watch: {

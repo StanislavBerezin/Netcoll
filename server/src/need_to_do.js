@@ -1,3 +1,4 @@
+/* 
 go to SERVER folder and write ("npm start")
 
 Authentication{

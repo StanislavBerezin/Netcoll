@@ -29,7 +29,7 @@
 
           <b-dropdown v-model="navigation" position="is-bottom-left">
             <a class="navbar-item shadow" slot="trigger">
-                        <span> John Smith</span>
+                        <span> {{name}}</span>
                         <b-icon icon="menu-down"></b-icon>
     </a>
 
@@ -130,8 +130,9 @@
     data() {
       return {
         navigation: 'home',
-        uni: "QUT",
+        uni: this.$store.state.user.university,
         activator: false,
+        name: this.$store.state.user.username
 
       }
     },
