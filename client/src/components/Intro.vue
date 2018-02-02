@@ -331,6 +331,7 @@
   import Contact from './small/Contact.vue'
   import Auth from '../connection/Auth.js'
 
+
   export default {
     data() {
       return {

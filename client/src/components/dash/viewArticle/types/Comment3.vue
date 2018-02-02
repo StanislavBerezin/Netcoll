@@ -12,7 +12,7 @@
         
     <div class="content">
       <p>
-        <strong>All</strong>
+        <strong>Barbara Middleton</strong>
         <br>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis.
         <br>

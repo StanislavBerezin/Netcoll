@@ -7,7 +7,7 @@
     </p>
   </figure>
   <div class="media-content">
-      <b-message type="is-success">
+      <b-message type="is-danger">
             
         
     <div class="content">
@@ -28,7 +28,7 @@
         </p>
       </figure>
       <div class="media-content">
-          <b-message type="is-success">
+          <b-message type="is-danger">
         <div class="content">
           <p>
             <strong>Sean Brown</strong>
@@ -50,7 +50,7 @@
         </p>
       </figure>
       <div class="media-content">
-          <b-message type="is-success">
+          <b-message type="is-danger">
         <div class="content">
           <p>
             <strong>Kayli Eunice </strong>

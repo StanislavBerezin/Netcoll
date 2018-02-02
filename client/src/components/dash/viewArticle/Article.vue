@@ -31,11 +31,10 @@
       </div>
       <div class="comments" style="margin-top:2rem;">
 
-        <p class="subtitle is-4" style="margin-bottom:2rem;">Ratings</p>
-        <star-rating :stars="stars" show-grey class="ratings" color="is-info"> </star-rating>
+    
 
 
-        <h1 class="subtitle is-3" style="margin-top:2rem;">Comments</h1>
+        
         <Comments></Comments>
       </div>
 
@@ -54,6 +53,9 @@
   import Footer from '../../small/Footer'
   import Comments from './Comments'
   import StarRating from '../../../microComponents/Stars.vue'
+   import smallStar from '../../../microComponents/StarSmall.vue'
+
+
 
   export default {
     data() {
@@ -69,7 +71,9 @@
       Nav,
       Footer,
       Comments,
-      StarRating
+      StarRating,
+      smallStar
+
 
     }
 
@@ -77,6 +81,7 @@
 
 </script>
 <style scoped>
+
   .grid-wrap {
     display: grid;
     grid-template-columns: repeat(24, 1fr);
