@@ -3,7 +3,7 @@ buefy.github.io
 Icons: materialise
 # Installation
 
-navigate to interface
+navigate to client
 ```
 npm install
 
